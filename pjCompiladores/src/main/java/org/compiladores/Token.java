@@ -10,12 +10,12 @@ public final class Token {
     private TokenConstant tokenType;
     private String lexeme;
     private String line;
-    private  String column;
-    public Token(TokenConstant tokenType, String lexeme, String line, String column) {
+    private  String columnT;
+    public Token(TokenConstant tokenType, String lexeme, String line, String columnT) {
         this.tokenType = tokenType ;
         this.lexeme = lexeme;
         this.line = line;
-        this.column = column;
+        this.columnT = columnT;
     }
 
     public TokenConstant getTokenType() {
@@ -42,34 +42,36 @@ public final class Token {
         this.line = line;
     }
 
-    public String getColumn() {
-        return column;
+    public String getColumnT() {
+        return columnT;
     }
 
-    public void setColumn(String column) {
-        this.column = column;
+    public void setColumnT(String column) {
+        this.columnT = column;
     }
 
     @Override
     public String toString() {
-       // saveToDatabase();
+        saveToDatabase();
         return "Token{" +
                 "tokenType=" + tokenType +
                 ", lexeme='" + lexeme + '\'' +
                 "line " + line +
-                "column " + column +
+                "column " + columnT +
                 '}';
     }
 
     // Method to save Token toString() output to MSSQL database
     public void saveToDatabase() {
         String url = "jdbc:sqlserver://umgdb.crnhqurpxrtw.us-east-1.rds.amazonaws.com:1433;databaseName=compiladores;user=admin;password=Seguridad2024*;encrypt=true;trustServerCertificate=true;";
-        String sql = "INSERT INTO Token (tokenType, lexeme) VALUES (?, ?)";
+        String sql = "INSERT INTO Token (tokenType, lexeme, line, columnT) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(url);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, tokenType.toString());
             stmt.setString(2, lexeme);
+            stmt.setString(3, line);
+            stmt.setString(4, columnT);
             stmt.executeUpdate();
             System.out.println("Token saved to database successfully.");
         } catch (SQLException e) {
