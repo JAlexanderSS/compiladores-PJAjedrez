@@ -1,5 +1,11 @@
 package org.compiladores;
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public final class Token {
     private TokenConstant tokenType;
     private String lexeme;
@@ -27,10 +33,27 @@ public final class Token {
 
     @Override
     public String toString() {
+       // saveToDatabase();
         return "Token{" +
                 "tokenType=" + tokenType +
                 ", lexeme='" + lexeme + '\'' +
                 '}';
+    }
+
+    // Method to save Token toString() output to MSSQL database
+    public void saveToDatabase() {
+        String url = "jdbc:sqlserver://umgdb.crnhqurpxrtw.us-east-1.rds.amazonaws.com:1433;databaseName=compiladores;user=admin;password=Seguridad2024*;encrypt=true;trustServerCertificate=true;";
+        String sql = "INSERT INTO Token (tokenType, lexeme) VALUES (?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, tokenType.toString());
+            stmt.setString(2, lexeme);
+            stmt.executeUpdate();
+            System.out.println("Token saved to database successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error saving token to database: " + e.getMessage());
+        }
     }
 }
 
