@@ -281,10 +281,11 @@ public class AjedrezLexer {
   /* user code: */
 private StringBuilder currentToken = new StringBuilder();
 String yline = "";
+String column = "";
 // Función para imprimir un error con la posición del token
-private void printError() {
+private Void printError() {
 yline = Integer.toString(yyline + 1);
-ycolumn = Integer.toString(yycolumn + 1);
+column = Integer.toString(yycolumn + 1);
     if (currentToken.length() > 0) {
         System.err.println("Error en la línea " + yline + ", columna " + yycolumn + ": Palabra no reconocida -> " + currentToken.toString());
         currentToken.setLength(0);
@@ -699,7 +700,7 @@ ycolumn = Integer.toString(yycolumn + 1);
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
           {   printError();
-  return new Token(TokenConstant.EOF,null);
+  return new Token(TokenConstant.EOF,yytext(), yline, column);
  }
       }
       else {
@@ -721,73 +722,73 @@ ycolumn = Integer.toString(yycolumn + 1);
           case 18: break;
           case 4:
             { printError();
-return new Token(TokenConstant.JAQUEMATE, yytext());
+return new Token(TokenConstant.JAQUEMATE, yytext(), yline, column);
             }
           // fall through
           case 19: break;
           case 5:
             { printError();
-return new Token(TokenConstant.JAQUE, yytext());
+return new Token(TokenConstant.JAQUE, yytext(), yline, column);
             }
           // fall through
           case 20: break;
           case 6:
             { printError();
-return new Token(TokenConstant.ENROQUE, yytext());
+return new Token(TokenConstant.ENROQUE, yytext(), yline, column);
             }
           // fall through
           case 21: break;
           case 7:
             { printError();
-return new Token(TokenConstant.HORIZONTAL, yytext());
+return new Token(TokenConstant.VERTICAL, yytext(), yline, column);
             }
           // fall through
           case 22: break;
           case 8:
             { printError();
-return new Token(TokenConstant.ARFIL, yytext());
+return new Token(TokenConstant.ARFIL, yytext(), yline, column);
             }
           // fall through
           case 23: break;
           case 9:
             { printError();
-return new Token(TokenConstant.CABALLO, yytext());
+return new Token(TokenConstant.CABALLO, yytext(), yline, column);
             }
           // fall through
           case 24: break;
           case 10:
             { printError();
-return new Token(TokenConstant.DAMA, yytext());
+return new Token(TokenConstant.DAMA, yytext(), yline, column);
             }
           // fall through
           case 25: break;
           case 11:
             { printError();
-return new Token(TokenConstant.PEON, yytext());
+return new Token(TokenConstant.PEON, yytext(), yline, column);
             }
           // fall through
           case 26: break;
           case 12:
             { printError();
-return new Token(TokenConstant.REY, yytext());
+return new Token(TokenConstant.REY, yytext(), yline, column);
             }
           // fall through
           case 27: break;
           case 13:
             { printError();
-return new Token(TokenConstant.TORRE, yytext());
+return new Token(TokenConstant.TORRE, yytext(), yline, column);
             }
           // fall through
           case 28: break;
           case 14:
             { printError();
-return new Token(TokenConstant.VERTICAL, yytext());
+return new Token(TokenConstant.HORIZONTAL, yytext(), yline, column);
             }
           // fall through
           case 29: break;
           case 15:
             { printError();
-return new Token(TokenConstant.CAPTURA, yytext());
+return new Token(TokenConstant.CAPTURA, yytext(), yline, column);
             }
           // fall through
           case 30: break;

@@ -13,6 +13,7 @@ public enum TokenConstant {
     CAPTURA,
     JAQUE,
     JAQUEMATE,
+    ERROR,
     // Representa el fin de archivo
     EOF
 }

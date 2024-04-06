@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DatosAjederez.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lista.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lista.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jflex/Lex.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jflex/Lex.flex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2ejSjPpeKpiJlv2aRO8U1oEmyJE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marle\uni\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="" />
+      <created>1712416628531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712416628531</updated>
+      <workItem from="1712416629636" duration="5526000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

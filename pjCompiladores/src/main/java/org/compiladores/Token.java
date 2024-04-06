@@ -3,10 +3,13 @@ package org.compiladores;
 public final class Token {
     private TokenConstant tokenType;
     private String lexeme;
-
-    public Token(TokenConstant tokenType, String lexeme) {
+    private String line;
+    private  String column;
+    public Token(TokenConstant tokenType, String lexeme, String line, String column) {
         this.tokenType = tokenType ;
         this.lexeme = lexeme;
+        this.line = line;
+        this.column = column;
     }
 
     public TokenConstant getTokenType() {
@@ -25,11 +28,29 @@ public final class Token {
         this.lexeme = lexeme;
     }
 
+    public String getLine() {
+        return line;
+    }
+
+    public void setLine(String line) {
+        this.line = line;
+    }
+
+    public String getColumn() {
+        return column;
+    }
+
+    public void setColumn(String column) {
+        this.column = column;
+    }
+
     @Override
     public String toString() {
         return "Token{" +
                 "tokenType=" + tokenType +
                 ", lexeme='" + lexeme + '\'' +
+                "line " + line +
+                "column " + column +
                 '}';
     }
 }

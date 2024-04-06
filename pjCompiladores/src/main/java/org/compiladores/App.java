@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args ) {
         try {
-            org.compiladores.AjedrezLexer lexer = new org.compiladores.AjedrezLexer(new FileReader("Lista.txt"));
+            org.compiladores.AjedrezLexer lexer = new org.compiladores.AjedrezLexer(new FileReader("DatosAjederez.txt"));
             Token token;
             while ((token = lexer.yylex()) != null) {
                 if (token.getTokenType() == TokenConstant.EOF) {
