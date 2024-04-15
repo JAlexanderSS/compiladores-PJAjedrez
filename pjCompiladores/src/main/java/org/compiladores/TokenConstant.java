@@ -1,19 +1,24 @@
 package org.compiladores;
 
 public enum TokenConstant {
-    HORIZONTAL,
-    VERTICAL,
+    FILA,
+    COLUMNA,
     REY,
     DAMA,
     TORRE,
     ARFIL,
     CABALLO,
     PEON,
-    ENROQUE,
+
+    GUION,
+    CERO,
     CAPTURA,
-    JAQUE,
-    JAQUEMATE,
-    ERROR,
+    IGUAL,
+
+    MAS,
+    NUMERAL,
+
+
     // Representa el fin de archivo
     EOF
 }

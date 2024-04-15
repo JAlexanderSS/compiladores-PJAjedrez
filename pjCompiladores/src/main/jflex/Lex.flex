@@ -9,24 +9,37 @@ import java.io.*;
 %line
 %column
 
-// Definición de patrones
-pVertical = [1-8]
-pHorizontal = [a-h] // Modificado para corregir el rango de letras
+//Filas
+fila = [1-8]
 
-rey = "R" // Modificado para añadir comillas dobles
-dama = "D" // Modificado para añadir comillas dobles
-torre = "T" // Modificado para añadir comillas dobles
-arfil = "A" // Modificado para añadir comillas dobles
-caballo = "C" // Modificado para añadir comillas dobles
-peon = "P" // Modificado para añadir comillas dobles
+//Columnas
+columa = [a-h]
 
-enroque = [-|0] // Modificado para permitir múltiples dígitos
+//Piezas
+rey = "R"
+dama = "D"
+torre = "T"
+arfil = "A"
+caballo = "C"
+peon = "P"
 
-captura = "x" // Modificado para añadir comillas dobles
+//Movimientos
+guion = "-"
+cero = "0"
+captura = "x"
+igual = "="
 
-jaque = [+] // Modificado para escapar el símbolo más
-jaqueMate = [++|#] // Modificado para escapar los símbolos más
+//Jaques
+mas = "+"
+numeral = "#"
 
+//Comentarios en la partida
+diagonal = "/"
+infinito = "∞"
+novedad = "N"
+interrogacion = "?"
+
+//Saltos de linea y espacios
 whitespace = [\t\r ]
 newline = \n
 
@@ -53,7 +66,7 @@ column = Integer.toString(yycolumn + 1);
 %}
 
 %%
-{pHorizontal}  {
+{columnas}  {
 printError();
 return new Token(TokenConstant.HORIZONTAL, yytext(), yline, column);
 }
