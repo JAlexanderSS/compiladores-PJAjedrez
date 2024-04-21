@@ -3,7 +3,7 @@ package org.compiladores;
 public enum TokenConstant {
     FILA,
     COLUMNA,
-    REY,
+    PIEZA,
     DAMA,
     TORRE,
     ARFIL,

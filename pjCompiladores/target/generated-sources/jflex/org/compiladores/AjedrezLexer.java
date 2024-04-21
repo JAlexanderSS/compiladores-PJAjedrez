@@ -8,7 +8,7 @@ import java.io.*;
 
 
 @SuppressWarnings("fallthrough")
-public class AjedrezLexer {
+public class AjedrezLexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -35,7 +35,7 @@ public class AjedrezLexer {
   private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
-    "\1\0\37\u0100\1\u0200\267\u0100\10\u0300\u1020\u0100";
+    "\1\0\37\u0100\1\u0200\1\u0100\1\u0300\265\u0100\10\u0400\u1020\u0100";
 
   private static int [] zzUnpackcmap_top() {
     int [] result = new int[4352];
@@ -63,14 +63,17 @@ public class AjedrezLexer {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\2\0"+
-    "\1\4\7\0\1\5\1\0\1\6\2\0\1\6\10\7"+
-    "\10\0\1\10\1\0\1\11\1\12\13\0\1\13\1\0"+
-    "\1\14\1\0\1\15\14\0\10\16\17\0\1\17\3\0"+
-    "\1\6\10\0\1\3\u01a2\0\2\3\326\0\u0100\3";
+    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\1\4"+
+    "\1\0\1\5\7\0\1\6\1\0\1\7\1\10\1\11"+
+    "\1\12\10\13\4\0\1\14\1\0\1\4\1\0\1\15"+
+    "\1\0\2\16\11\0\1\17\1\0\1\20\1\0\1\16"+
+    "\1\0\1\16\3\0\1\21\10\0\1\22\7\23\5\0"+
+    "\1\17\1\0\1\20\1\0\1\16\1\0\1\16\3\0"+
+    "\1\21\14\0\1\3\u01a2\0\2\3\364\0\1\24\341\0"+
+    "\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
-    int [] result = new int[1024];
+    int [] result = new int[1280];
     int offset = 0;
     offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);
     return result;
@@ -94,11 +97,12 @@ public class AjedrezLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17";
+    "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\2\2"+
+    "\1\10\1\5\2\1\1\5\1\11\2\12\1\5\5\0"+
+    "\1\13\2\0\1\14\1\15";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[16];
+    int [] result = new int[28];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -123,11 +127,13 @@ public class AjedrezLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\20\0\40\0\20\0\20\0\20\0\20\0\20"+
-    "\0\20\0\20\0\20\0\20\0\20\0\20\0\20\0\20";
+    "\0\0\0\25\0\52\0\25\0\77\0\25\0\124\0\151"+
+    "\0\176\0\25\0\223\0\250\0\25\0\25\0\25\0\250"+
+    "\0\25\0\275\0\322\0\347\0\374\0\u0111\0\u0126\0\u013b"+
+    "\0\u0150\0\u0165\0\25\0\25";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[16];
+    int [] result = new int[28];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -151,11 +157,16 @@ public class AjedrezLexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\21\0\1\3\16\0";
+    "\2\2\1\11\1\12\1\13\1\14\1\15\1\16\1\15"+
+    "\1\17\1\20\1\21\1\22\26\0\1\3\27\0\1\16"+
+    "\26\0\1\6\1\16\1\0\1\23\21\0\1\16\2\0"+
+    "\1\24\22\0\1\25\26\0\1\26\23\0\1\27\30\0"+
+    "\1\16\17\0\1\16\4\0\1\16\16\0\1\16\30\0"+
+    "\1\30\20\0\1\16\15\0\1\16\20\0\1\31\13\0"+
+    "\1\32\25\0\1\33\26\0\1\34\12\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[48];
+    int [] result = new int[378];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -198,10 +209,12 @@ public class AjedrezLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\15\11";
+    "\1\1\1\11\1\1\1\11\1\1\1\11\3\1\1\11"+
+    "\2\1\3\11\1\1\1\11\1\1\5\0\1\1\2\0"+
+    "\2\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[16];
+    int [] result = new int[28];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -267,7 +280,6 @@ public class AjedrezLexer {
   private int yycolumn;
 
   /** Number of characters up to the start of the matched text. */
-  @SuppressWarnings("unused")
   private long yychar;
 
   /** Whether the scanner is currently at the beginning of a line. */
@@ -275,7 +287,6 @@ public class AjedrezLexer {
   private boolean zzAtBOL = true;
 
   /** Whether the user-EOF-code has already been executed. */
-  @SuppressWarnings("unused")
   private boolean zzEOFDone;
 
   /* user code: */
@@ -553,6 +564,18 @@ column = Integer.toString(yycolumn + 1);
   }
 
 
+  /**
+   * Contains user EOF-code, which will be executed exactly once,
+   * when the end of file is reached
+   */
+  private void zzDoEOF() throws java.io.IOException {
+    if (!zzEOFDone) {
+      zzEOFDone = true;
+    
+  yyclose();    }
+  }
+
+
 
 
   /**
@@ -562,7 +585,7 @@ column = Integer.toString(yycolumn + 1);
    * @return the next token.
    * @exception java.io.IOException if any I/O-Error occurs.
    */
-  public Token yylex() throws java.io.IOException
+  @Override  public Token next_token() throws java.io.IOException
   {
     int zzInput;
     int zzAction;
@@ -579,6 +602,8 @@ column = Integer.toString(yycolumn + 1);
 
     while (true) {
       zzMarkedPosL = zzMarkedPos;
+
+      yychar+= zzMarkedPosL-zzStartRead;
 
       boolean zzR = false;
       int zzCh;
@@ -699,6 +724,7 @@ column = Integer.toString(yycolumn + 1);
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
+            zzDoEOF();
           {   printError();
   return new Token(TokenConstant.EOF,yytext(), yline, column);
  }
@@ -706,92 +732,80 @@ column = Integer.toString(yycolumn + 1);
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
+            { printError();
+return new Token(TokenConstant.PIEZA, yytext(), yline, column);
+            }
+          // fall through
+          case 14: break;
+          case 2:
             { currentToken.append(yytext());
             }
           // fall through
-          case 16: break;
-          case 2:
+          case 15: break;
+          case 3:
             { /*Ignorar*/
             }
           // fall through
-          case 17: break;
-          case 3:
+          case 16: break;
+          case 4:
             { printError();
             }
           // fall through
+          case 17: break;
+          case 5:
+            { printError();
+return new Token(TokenConstant.COMENTARIO, yytext(), yline, column);
+            }
+          // fall through
           case 18: break;
-          case 4:
+          case 6:
             { printError();
 return new Token(TokenConstant.JAQUEMATE, yytext(), yline, column);
             }
           // fall through
           case 19: break;
-          case 5:
+          case 7:
             { printError();
 return new Token(TokenConstant.JAQUE, yytext(), yline, column);
             }
           // fall through
           case 20: break;
-          case 6:
-            { printError();
-return new Token(TokenConstant.ENROQUE, yytext(), yline, column);
-            }
-          // fall through
-          case 21: break;
-          case 7:
-            { printError();
-return new Token(TokenConstant.VERTICAL, yytext(), yline, column);
-            }
-          // fall through
-          case 22: break;
           case 8:
-            { printError();
-return new Token(TokenConstant.ARFIL, yytext(), yline, column);
-            }
-          // fall through
-          case 23: break;
-          case 9:
-            { printError();
-return new Token(TokenConstant.CABALLO, yytext(), yline, column);
-            }
-          // fall through
-          case 24: break;
-          case 10:
-            { printError();
-return new Token(TokenConstant.DAMA, yytext(), yline, column);
-            }
-          // fall through
-          case 25: break;
-          case 11:
-            { printError();
-return new Token(TokenConstant.PEON, yytext(), yline, column);
-            }
-          // fall through
-          case 26: break;
-          case 12:
-            { printError();
-return new Token(TokenConstant.REY, yytext(), yline, column);
-            }
-          // fall through
-          case 27: break;
-          case 13:
-            { printError();
-return new Token(TokenConstant.TORRE, yytext(), yline, column);
-            }
-          // fall through
-          case 28: break;
-          case 14:
             { printError();
 return new Token(TokenConstant.HORIZONTAL, yytext(), yline, column);
             }
           // fall through
-          case 29: break;
-          case 15:
+          case 21: break;
+          case 9:
             { printError();
 return new Token(TokenConstant.CAPTURA, yytext(), yline, column);
             }
           // fall through
-          case 30: break;
+          case 22: break;
+          case 10:
+            { printError();
+return new Token(TokenConstant.VERTICAL, yytext(), yline, column);
+            }
+          // fall through
+          case 23: break;
+          case 11:
+            { printError();
+return new Token(TokenConstant.ENROQUECORTO, yytext(), yline, column);
+            }
+          // fall through
+          case 24: break;
+          case 12:
+            { printError();
+return new Token(TokenConstant.SIGLASCAP, yytext(), yline, column);
+            }
+          // fall through
+          case 25: break;
+          case 13:
+            { printError();
+return new Token(TokenConstant.ENROQUELARGO, yytext(), yline, column);
+            }
+          // fall through
+          case 26: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
