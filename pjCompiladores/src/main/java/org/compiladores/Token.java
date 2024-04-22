@@ -52,7 +52,7 @@ public final class Token {
 
     @Override
     public String toString() {
-        saveToDatabase();
+        //saveToDatabase();
         return "Token{" +
                 "tokenType=" + tokenType +
                 ", lexeme='" + lexeme + '\'' +

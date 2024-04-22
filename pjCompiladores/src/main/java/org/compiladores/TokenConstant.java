@@ -3,22 +3,18 @@ package org.compiladores;
 public enum TokenConstant {
     FILA,
     COLUMNA,
-    PIEZA,
+    REY,
     DAMA,
     TORRE,
-    ARFIL,
+    ALFIL,
     CABALLO,
     PEON,
-
-    GUION,
-    CERO,
     CAPTURA,
-    IGUAL,
-
-    MAS,
-    NUMERAL,
-
-
-    // Representa el fin de archivo
+    SIGLASCAP,
+    ENROQUELARGO,
+    ENROQUECORTO,
+    JAQUEMATE,
+    JAQUE,
+    COMENTARIO,
     EOF
 }

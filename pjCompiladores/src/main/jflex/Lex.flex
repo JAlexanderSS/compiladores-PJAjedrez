@@ -9,7 +9,7 @@ import java.io.*;
 %line
 %column
 %char
-%cup
+
 %unicode
 %ignorecase
 
@@ -23,12 +23,9 @@ columa = [a-h]
 rey = "R"
 dama = "D"
 torre = "T"
-arfil = "A"
+alfil = "A"
 caballo = "C"
 peon = "P"
-
-//Cualquier pieza
-pieza = {rey}|{dama}|{torre}|{arfil}|{caballo}|{peon}?
 
 //Signos para capturas
 captura = "x"
@@ -114,17 +111,42 @@ column = Integer.toString(yycolumn + 1);
 %%
 {fila}  {
 printError();
-return new Token(TokenConstant.HORIZONTAL, yytext(), yline, column);
+return new Token(TokenConstant.FILA, yytext(), yline, column);
 }
 
 {columa}  {
 printError();
-return new Token(TokenConstant.VERTICAL, yytext(), yline, column);
+return new Token(TokenConstant.COLUMNA, yytext(), yline, column);
 }
 
-{pieza}  {
+{rey}  {
 printError();
-return new Token(TokenConstant.PIEZA, yytext(), yline, column);
+return new Token(TokenConstant.REY, yytext(), yline, column);
+}
+
+{dama}  {
+printError();
+return new Token(TokenConstant.DAMA, yytext(), yline, column);
+}
+
+{torre}  {
+printError();
+return new Token(TokenConstant.TORRE, yytext(), yline, column);
+}
+
+{alfil}  {
+printError();
+return new Token(TokenConstant.ALFIL, yytext(), yline, column);
+}
+
+{caballo}  {
+printError();
+return new Token(TokenConstant.CABALLO, yytext(), yline, column);
+}
+
+{peon}  {
+printError();
+return new Token(TokenConstant.PEON, yytext(), yline, column);
 }
 
 {captura}  {

@@ -35,7 +35,7 @@ public class AjedrezLexer {
   private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
-    "\1\0\37\u0100\1\u0200\267\u0100\10\u0300\u1020\u0100";
+    "\1\0\37\u0100\1\u0200\1\u0100\1\u0300\265\u0100\10\u0400\u1020\u0100";
 
   private static int [] zzUnpackcmap_top() {
     int [] result = new int[4352];
@@ -63,14 +63,17 @@ public class AjedrezLexer {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\2\0"+
-    "\1\4\7\0\1\5\1\0\1\6\2\0\1\6\10\7"+
-    "\10\0\1\10\1\0\1\11\1\12\13\0\1\13\1\0"+
-    "\1\14\1\0\1\15\14\0\10\16\17\0\1\17\3\0"+
-    "\1\6\10\0\1\3\u01a2\0\2\3\326\0\u0100\3";
+    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\1\4"+
+    "\1\0\1\5\7\0\1\6\1\0\1\7\1\10\1\11"+
+    "\1\12\10\13\4\0\1\14\1\0\1\4\1\0\1\15"+
+    "\1\0\1\16\1\17\11\0\1\20\1\0\1\21\1\0"+
+    "\1\22\1\0\1\23\3\0\1\24\10\0\1\25\7\26"+
+    "\5\0\1\20\1\0\1\21\1\0\1\22\1\0\1\23"+
+    "\3\0\1\24\14\0\1\3\u01a2\0\2\3\364\0\1\27"+
+    "\341\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
-    int [] result = new int[1024];
+    int [] result = new int[1280];
     int offset = 0;
     offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);
     return result;
@@ -94,11 +97,13 @@ public class AjedrezLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17";
+    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\2\1"+
+    "\1\7\1\4\1\10\1\11\1\12\1\4\1\13\1\14"+
+    "\1\15\1\16\2\17\1\4\5\0\1\20\2\0\1\21"+
+    "\1\22";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[16];
+    int [] result = new int[32];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -123,11 +128,13 @@ public class AjedrezLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\20\0\40\0\20\0\20\0\20\0\20\0\20"+
-    "\0\20\0\20\0\20\0\20\0\20\0\20\0\20\0\20";
+    "\0\0\0\30\0\60\0\30\0\110\0\30\0\140\0\170"+
+    "\0\220\0\30\0\250\0\300\0\30\0\30\0\30\0\30"+
+    "\0\30\0\30\0\30\0\300\0\30\0\330\0\360\0\u0108"+
+    "\0\u0120\0\u0138\0\u0150\0\u0168\0\u0180\0\u0198\0\30\0\30";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[16];
+    int [] result = new int[32];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -151,11 +158,17 @@ public class AjedrezLexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\21\0\1\3\16\0";
+    "\2\2\1\11\1\12\1\13\1\14\1\15\1\16\1\17"+
+    "\1\20\1\21\1\22\1\23\1\24\1\25\1\26\31\0"+
+    "\1\3\32\0\1\17\31\0\1\6\1\17\1\0\1\27"+
+    "\24\0\1\17\2\0\1\30\25\0\1\31\31\0\1\32"+
+    "\26\0\1\33\33\0\1\17\22\0\1\17\4\0\1\17"+
+    "\21\0\1\17\33\0\1\34\23\0\1\17\20\0\1\17"+
+    "\21\0\1\35\15\0\1\36\30\0\1\37\31\0\1\40"+
+    "\15\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[48];
+    int [] result = new int[432];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -198,10 +211,12 @@ public class AjedrezLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\15\11";
+    "\1\0\1\11\1\1\1\11\1\1\1\11\3\1\1\11"+
+    "\2\1\7\11\1\1\1\11\1\1\5\0\1\1\2\0"+
+    "\2\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[16];
+    int [] result = new int[32];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -267,7 +282,6 @@ public class AjedrezLexer {
   private int yycolumn;
 
   /** Number of characters up to the start of the matched text. */
-  @SuppressWarnings("unused")
   private long yychar;
 
   /** Whether the scanner is currently at the beginning of a line. */
@@ -283,7 +297,7 @@ private StringBuilder currentToken = new StringBuilder();
 String yline = "";
 String column = "";
 // Función para imprimir un error con la posición del token
-private Void printError() {
+private void printError() {
 yline = Integer.toString(yyline + 1);
 column = Integer.toString(yycolumn + 1);
     if (currentToken.length() > 0) {
@@ -580,6 +594,8 @@ column = Integer.toString(yycolumn + 1);
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
+      yychar+= zzMarkedPosL-zzStartRead;
+
       boolean zzR = false;
       int zzCh;
       int zzCharCount;
@@ -709,89 +725,107 @@ column = Integer.toString(yycolumn + 1);
             { currentToken.append(yytext());
             }
           // fall through
-          case 16: break;
+          case 19: break;
           case 2:
             { /*Ignorar*/
             }
           // fall through
-          case 17: break;
+          case 20: break;
           case 3:
             { printError();
             }
           // fall through
-          case 18: break;
+          case 21: break;
           case 4:
+            { printError();
+return new Token(TokenConstant.COMENTARIO, yytext(), yline, column);
+            }
+          // fall through
+          case 22: break;
+          case 5:
             { printError();
 return new Token(TokenConstant.JAQUEMATE, yytext(), yline, column);
             }
           // fall through
-          case 19: break;
-          case 5:
+          case 23: break;
+          case 6:
             { printError();
 return new Token(TokenConstant.JAQUE, yytext(), yline, column);
             }
           // fall through
-          case 20: break;
-          case 6:
-            { printError();
-return new Token(TokenConstant.ENROQUE, yytext(), yline, column);
-            }
-          // fall through
-          case 21: break;
+          case 24: break;
           case 7:
             { printError();
-return new Token(TokenConstant.VERTICAL, yytext(), yline, column);
+return new Token(TokenConstant.FILA, yytext(), yline, column);
             }
           // fall through
-          case 22: break;
+          case 25: break;
           case 8:
             { printError();
 return new Token(TokenConstant.ARFIL, yytext(), yline, column);
             }
           // fall through
-          case 23: break;
+          case 26: break;
           case 9:
             { printError();
 return new Token(TokenConstant.CABALLO, yytext(), yline, column);
             }
           // fall through
-          case 24: break;
+          case 27: break;
           case 10:
             { printError();
 return new Token(TokenConstant.DAMA, yytext(), yline, column);
             }
           // fall through
-          case 25: break;
+          case 28: break;
           case 11:
             { printError();
 return new Token(TokenConstant.PEON, yytext(), yline, column);
             }
           // fall through
-          case 26: break;
+          case 29: break;
           case 12:
             { printError();
 return new Token(TokenConstant.REY, yytext(), yline, column);
             }
           // fall through
-          case 27: break;
+          case 30: break;
           case 13:
             { printError();
 return new Token(TokenConstant.TORRE, yytext(), yline, column);
             }
           // fall through
-          case 28: break;
+          case 31: break;
           case 14:
-            { printError();
-return new Token(TokenConstant.HORIZONTAL, yytext(), yline, column);
-            }
-          // fall through
-          case 29: break;
-          case 15:
             { printError();
 return new Token(TokenConstant.CAPTURA, yytext(), yline, column);
             }
           // fall through
-          case 30: break;
+          case 32: break;
+          case 15:
+            { printError();
+return new Token(TokenConstant.COLUMNA, yytext(), yline, column);
+            }
+          // fall through
+          case 33: break;
+          case 16:
+            { printError();
+return new Token(TokenConstant.ENROQUECORTO, yytext(), yline, column);
+            }
+          // fall through
+          case 34: break;
+          case 17:
+            { printError();
+return new Token(TokenConstant.SIGLASCAP, yytext(), yline, column);
+            }
+          // fall through
+          case 35: break;
+          case 18:
+            { printError();
+return new Token(TokenConstant.ENROQUELARGO, yytext(), yline, column);
+            }
+          // fall through
+          case 36: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
