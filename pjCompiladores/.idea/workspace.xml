@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/jflex/Lex.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jflex/Lex.flex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +42,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,7 +72,8 @@
       <updated>1712416628531</updated>
       <workItem from="1712416629636" duration="7908000" />
       <workItem from="1713732633994" duration="6192000" />
-      <workItem from="1713751259851" duration="1095000" />
+      <workItem from="1713751259851" duration="4789000" />
+      <workItem from="1713921189050" duration="3356000" />
     </task>
     <servers />
   </component>

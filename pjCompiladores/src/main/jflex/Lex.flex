@@ -1,6 +1,7 @@
 // Código integro
 package org.compiladores;
 import java.io.*;
+import java_cup.runtime.*;
 
 %%
 // Opciones y declaraciones
@@ -9,7 +10,7 @@ import java.io.*;
 %line
 %column
 %char
-
+%cup
 %unicode
 %ignorecase
 
@@ -111,77 +112,77 @@ column = Integer.toString(yycolumn + 1);
 %%
 {fila}  {
 printError();
-return new Token(TokenConstant.FILA, yytext(), yline, column);
+return new Token(Persersym.FILA, yytext(), yline, column);
 }
 
 {columa}  {
 printError();
-return new Token(TokenConstant.COLUMNA, yytext(), yline, column);
+return new Token(Persersym.COLUMNA, yytext(), yline, column);
 }
 
 {rey}  {
 printError();
-return new Token(TokenConstant.REY, yytext(), yline, column);
+return new Token(Persersym.REY, yytext(), yline, column);
 }
 
 {dama}  {
 printError();
-return new Token(TokenConstant.DAMA, yytext(), yline, column);
+return new Token(Persersym.DAMA, yytext(), yline, column);
 }
 
 {torre}  {
 printError();
-return new Token(TokenConstant.TORRE, yytext(), yline, column);
+return new Token(Persersym.TORRE, yytext(), yline, column);
 }
 
 {alfil}  {
 printError();
-return new Token(TokenConstant.ALFIL, yytext(), yline, column);
+return new Token(Persersym.ALFIL, yytext(), yline, column);
 }
 
 {caballo}  {
 printError();
-return new Token(TokenConstant.CABALLO, yytext(), yline, column);
+return new Token(Persersym.CABALLO, yytext(), yline, column);
 }
 
 {peon}  {
 printError();
-return new Token(TokenConstant.PEON, yytext(), yline, column);
+return new Token(Persersym.PEON, yytext(), yline, column);
 }
 
 {captura}  {
 printError();
-return new Token(TokenConstant.CAPTURA, yytext(), yline, column);
+return new Token(Persersym.CAPTURA, yytext(), yline, column);
 }
 
 {capturaap}  {
 printError();
-return new Token(TokenConstant.SIGLASCAP, yytext(), yline, column);
+return new Token(Persersym.SIGLASCAP, yytext(), yline, column);
 }
 
 {enroqueLargo}  {
 printError();
-return new Token(TokenConstant.ENROQUELARGO, yytext(), yline, column);
+return new Token(Persersym.ENROQUELARGO, yytext(), yline, column);
 }
 
 {enroqueCorto}  {
 printError();
-return new Token(TokenConstant.ENROQUECORTO, yytext(), yline, column);
+return new Token(Persersym.ENROQUECORTO, yytext(), yline, column);
 }
 
 {jauqeMate}  {
 printError();
-return new Token(TokenConstant.JAQUEMATE, yytext(), yline, column);
+return new Token(Persersym.JAQUEMATE, yytext(), yline, column);
 }
 
 {jaque}  {
 printError();
-return new Token(TokenConstant.JAQUE, yytext(), yline, column);
+return new Token(Persersym.JAQUE, yytext(), yline, column);
 }
 
 {comentario}  {
 printError();
-return new Token(TokenConstant.COMENTARIO, yytext(), yline, column);
+return new Token(Persersym.COMENTARIO, yytext(), yline, column);
 }
 
 {whitespace}+  {/*Ignorar*/} // Ignorar espacios en blanco

@@ -5,10 +5,11 @@
 // Código integro
 package org.compiladores;
 import java.io.*;
+import java_cup.runtime.*;
 
 
 @SuppressWarnings("fallthrough")
-public class AjedrezLexer {
+public class AjedrezLexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -289,7 +290,6 @@ public class AjedrezLexer {
   private boolean zzAtBOL = true;
 
   /** Whether the user-EOF-code has already been executed. */
-  @SuppressWarnings("unused")
   private boolean zzEOFDone;
 
   /* user code: */
@@ -567,6 +567,18 @@ column = Integer.toString(yycolumn + 1);
   }
 
 
+  /**
+   * Contains user EOF-code, which will be executed exactly once,
+   * when the end of file is reached
+   */
+  private void zzDoEOF() throws java.io.IOException {
+    if (!zzEOFDone) {
+      zzEOFDone = true;
+    
+  yyclose();    }
+  }
+
+
 
 
   /**
@@ -576,7 +588,7 @@ column = Integer.toString(yycolumn + 1);
    * @return the next token.
    * @exception java.io.IOException if any I/O-Error occurs.
    */
-  public Token yylex() throws java.io.IOException
+  @Override  public Token next_token() throws java.io.IOException
   {
     int zzInput;
     int zzAction;
@@ -715,6 +727,7 @@ column = Integer.toString(yycolumn + 1);
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
+            zzDoEOF();
           {   printError();
   return new Token(TokenConstant.EOF,yytext(), yline, column);
  }
@@ -738,91 +751,91 @@ column = Integer.toString(yycolumn + 1);
           case 21: break;
           case 4:
             { printError();
-return new Token(TokenConstant.COMENTARIO, yytext(), yline, column);
+return new Token(Persersym.COMENTARIO, yytext(), yline, column);
             }
           // fall through
           case 22: break;
           case 5:
             { printError();
-return new Token(TokenConstant.JAQUEMATE, yytext(), yline, column);
+return new Token(Persersym.JAQUEMATE, yytext(), yline, column);
             }
           // fall through
           case 23: break;
           case 6:
             { printError();
-return new Token(TokenConstant.JAQUE, yytext(), yline, column);
+return new Token(Persersym.JAQUE, yytext(), yline, column);
             }
           // fall through
           case 24: break;
           case 7:
             { printError();
-return new Token(TokenConstant.FILA, yytext(), yline, column);
+return new Token(Persersym.FILA, yytext(), yline, column);
             }
           // fall through
           case 25: break;
           case 8:
             { printError();
-return new Token(TokenConstant.ALFIL, yytext(), yline, column);
+return new Token(Persersym.ALFIL, yytext(), yline, column);
             }
           // fall through
           case 26: break;
           case 9:
             { printError();
-return new Token(TokenConstant.CABALLO, yytext(), yline, column);
+return new Token(Persersym.CABALLO, yytext(), yline, column);
             }
           // fall through
           case 27: break;
           case 10:
             { printError();
-return new Token(TokenConstant.DAMA, yytext(), yline, column);
+return new Token(Persersym.DAMA, yytext(), yline, column);
             }
           // fall through
           case 28: break;
           case 11:
             { printError();
-return new Token(TokenConstant.PEON, yytext(), yline, column);
+return new Token(Persersym.PEON, yytext(), yline, column);
             }
           // fall through
           case 29: break;
           case 12:
             { printError();
-return new Token(TokenConstant.REY, yytext(), yline, column);
+return new Token(Persersym.REY, yytext(), yline, column);
             }
           // fall through
           case 30: break;
           case 13:
             { printError();
-return new Token(TokenConstant.TORRE, yytext(), yline, column);
+return new Token(Persersym.TORRE, yytext(), yline, column);
             }
           // fall through
           case 31: break;
           case 14:
             { printError();
-return new Token(TokenConstant.CAPTURA, yytext(), yline, column);
+return new Token(Persersym.CAPTURA, yytext(), yline, column);
             }
           // fall through
           case 32: break;
           case 15:
             { printError();
-return new Token(TokenConstant.COLUMNA, yytext(), yline, column);
+return new Token(Persersym.COLUMNA, yytext(), yline, column);
             }
           // fall through
           case 33: break;
           case 16:
             { printError();
-return new Token(TokenConstant.ENROQUECORTO, yytext(), yline, column);
+return new Token(Persersym.ENROQUECORTO, yytext(), yline, column);
             }
           // fall through
           case 34: break;
           case 17:
             { printError();
-return new Token(TokenConstant.SIGLASCAP, yytext(), yline, column);
+return new Token(Persersym.SIGLASCAP, yytext(), yline, column);
             }
           // fall through
           case 35: break;
           case 18:
             { printError();
-return new Token(TokenConstant.ENROQUELARGO, yytext(), yline, column);
+return new Token(Persersym.ENROQUELARGO, yytext(), yline, column);
             }
           // fall through
           case 36: break;

@@ -762,7 +762,7 @@ return new Token(TokenConstant.FILA, yytext(), yline, column);
           case 25: break;
           case 8:
             { printError();
-return new Token(TokenConstant.ARFIL, yytext(), yline, column);
+return new Token(TokenConstant.ALFIL, yytext(), yline, column);
             }
           // fall through
           case 26: break;
