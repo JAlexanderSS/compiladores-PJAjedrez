@@ -3,4 +3,45 @@ import java_cup.runtime.*;
 
 class Parser;
 
-terminal 
+terminal FILA, COLUMNA, REY, DAMA, ALFIL, CABALLO, TORRE, PEON, CAPTURA, PROMOCION, CAP, ENROQUELARGO, ENROQUECORTO, JAQUEMATE, JAQUE, COMENTARIO;
+
+non terminal captura, cdp, cdpap, pdp, dpc, dpf, dpa, cca, movimiento, jque, jquemate, movimientofinal, comentario, entrada;
+non terminal desplazamiento;
+non terminal pieza;
+non terminal casilla;
+
+start with entrada;
+
+entrada ::= movimientofinal {: RESULT = "Se logro algo xd"; :};
+
+movimientofinal ::= movimiento comentario | jque comentario | jquemate comentario;
+
+movimiento ::= desplazamiento | captura | cdp | cdpap | pdp | dpc | dpf | dpa | ENROQUECORTO | ENROQUELARGO;
+
+jque ::= movimiento JAQUE;
+
+jquemate ::= movimiento JAQUEMATE;
+
+pieza ::= REY | DAMA | ALFIL | CABALLO | TORRE | PEON;
+
+casilla ::= COLUMNA FILA;
+
+desplazamiento ::= pieza casilla;
+
+captura ::= pieza CAPTURA casilla;
+
+cdp ::= COLUMNA CAPTURA casilla;
+
+cdpap ::= COLUMNA CAPTURA casilla PROMOCION CAP;
+
+pdp ::= desplazamiento PROMOCION pieza;
+
+cca ::= CAPTURA | ;
+
+dpc ::= pieza COLUMNA cca casilla;
+
+dpf ::= pieza FILA cca casilla;
+
+dpa ::= pieza casilla cca casilla;
+
+comentario ::= COMENTARIO | ;

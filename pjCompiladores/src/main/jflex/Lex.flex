@@ -4,15 +4,9 @@ import java.io.*;
 import java_cup.runtime.*;
 
 %%
-// Opciones y declaraciones
-%class AjedrezLexer
+%class IDLexer
 %public
-%line
-%column
-%char
 %cup
-%unicode
-%ignorecase
 
 //Filas
 fila = [1-8]
@@ -87,106 +81,86 @@ comentario = {jb}|{jm}|{jmb}|{jmm}|{ji}|{jd}|{joaj}|{lvb}|{lvn}|{vb}|{vn}|{vdb}|
 whitespace = [\t\r ]
 newline = \n
 
-%type Token
-
 %eofval{
-  printError();
-  return new Token(TokenConstant.EOF,yytext(), yline, column);
+  return symbol(ParserSym.EOF);
 %eofval}
 
 %{
-private StringBuilder currentToken = new StringBuilder();
-String yline = "";
-String column = "";
-// Función para imprimir un error con la posición del token
-private void printError() {
-yline = Integer.toString(yyline + 1);
-column = Integer.toString(yycolumn + 1);
-    if (currentToken.length() > 0) {
-        System.err.println("Error en la línea " + yline + ", columna " + yycolumn + ": Palabra no reconocida -> " + currentToken.toString());
-        currentToken.setLength(0);
-    }
+StringBuilder string = new StringBuilder();
+private Symbol symbol(int type) {
+    return new Symbol(type, yyline, yycolumn);
+}
+
+private Symbol symbol(int type, Object value) {
+    return new Symbol(type, yyline, yycolumn, value);
 }
 %}
 
 %%
 {fila}  {
-printError();
-return new Token(Persersym.FILA, yytext(), yline, column);
+return symbol(ParserSym.FILA, yytext());
 }
 
 {columa}  {
-printError();
-return new Token(Persersym.COLUMNA, yytext(), yline, column);
+return symbol(ParserSym.COLUMNA, yytext());
 }
 
 {rey}  {
-printError();
-return new Token(Persersym.REY, yytext(), yline, column);
+return symbol(ParserSym.REY, yytext());
 }
 
 {dama}  {
-printError();
-return new Token(Persersym.DAMA, yytext(), yline, column);
+return symbol(ParserSym.DAMA, yytext());
 }
 
 {torre}  {
-printError();
-return new Token(Persersym.TORRE, yytext(), yline, column);
+return symbol(ParserSym.TORRE, yytext());
 }
 
 {alfil}  {
-printError();
-return new Token(Persersym.ALFIL, yytext(), yline, column);
+return symbol(ParserSym.ALFIL, yytext());
 }
 
 {caballo}  {
-printError();
-return new Token(Persersym.CABALLO, yytext(), yline, column);
+return symbol(ParserSym.CABALLO, yytext());
 }
 
-{peon}  {
-printError();
-return new Token(Persersym.PEON, yytext(), yline, column);
+{peon}   {
+return symbol(ParserSym.PEON, yytext());
 }
 
 {captura}  {
-printError();
-return new Token(Persersym.CAPTURA, yytext(), yline, column);
+return symbol(ParserSym.CAPTURA, yytext());
 }
 
+{igual} {
+return symbol(ParserSym.PROMOCION, yytext());
+      }
+
 {capturaap}  {
-printError();
-return new Token(Persersym.SIGLASCAP, yytext(), yline, column);
+return symbol(ParserSym.CAP, yytext());
 }
 
 {enroqueLargo}  {
-printError();
-return new Token(Persersym.ENROQUELARGO, yytext(), yline, column);
+return symbol(ParserSym.ENROQUELARGO, yytext());
 }
 
 {enroqueCorto}  {
-printError();
-return new Token(Persersym.ENROQUECORTO, yytext(), yline, column);
+return symbol(ParserSym.ENROQUECORTO, yytext());
 }
 
 {jauqeMate}  {
-printError();
-return new Token(Persersym.JAQUEMATE, yytext(), yline, column);
+return symbol(ParserSym.JAQUEMATE, yytext());
 }
 
 {jaque}  {
-printError();
-return new Token(Persersym.JAQUE, yytext(), yline, column);
+return symbol(ParserSym.JAQUE, yytext());
 }
 
 {comentario}  {
-printError();
-return new Token(Persersym.COMENTARIO, yytext(), yline, column);
+return symbol(ParserSym.COMENTARIO, yytext());
 }
 
 {whitespace}+  {/*Ignorar*/} // Ignorar espacios en blanco
-{newline}  {printError();}
-.     {
-    currentToken.append(yytext());
-}
+{newline}  {/*Ignorar*/} // Ignorar saltos de linea
+[^] { throw new Error("Caracter no valido: " + yytext()); }

@@ -9,7 +9,7 @@ import java_cup.runtime.*;
 
 
 @SuppressWarnings("fallthrough")
-public class AjedrezLexer implements java_cup.runtime.Scanner {
+public class IDLexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -36,7 +36,7 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
-    "\1\0\37\u0100\1\u0200\1\u0100\1\u0300\265\u0100\10\u0400\u1020\u0100";
+    "\1\0\41\u0100\1\u0200\u10dd\u0100";
 
   private static int [] zzUnpackcmap_top() {
     int [] result = new int[4352];
@@ -64,17 +64,15 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\1\4"+
-    "\1\0\1\5\7\0\1\6\1\0\1\7\1\10\1\11"+
-    "\1\12\10\13\4\0\1\14\1\0\1\4\1\0\1\15"+
-    "\1\0\1\16\1\17\11\0\1\20\1\0\1\21\1\0"+
-    "\1\22\1\0\1\23\3\0\1\24\10\0\1\25\7\26"+
-    "\5\0\1\20\1\0\1\21\1\0\1\22\1\0\1\23"+
-    "\3\0\1\24\14\0\1\3\u01a2\0\2\3\364\0\1\27"+
-    "\341\0\u0100\3";
+    "\11\0\1\1\1\2\2\0\1\1\22\0\1\1\1\3"+
+    "\1\0\1\4\7\0\1\5\1\0\1\6\1\7\1\10"+
+    "\1\11\10\12\4\0\1\13\1\0\1\3\1\0\1\14"+
+    "\1\0\1\15\1\16\11\0\1\17\1\0\1\20\1\0"+
+    "\1\21\1\0\1\22\14\0\1\23\7\24\7\0\1\25"+
+    "\7\0\1\26\u01a5\0\1\27\341\0";
 
   private static int [] zzUnpackcmap_blocks() {
-    int [] result = new int[1280];
+    int [] result = new int[768];
     int offset = 0;
     offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);
     return result;
@@ -98,10 +96,9 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\2\1"+
-    "\1\7\1\10\1\11\1\12\1\13\1\4\1\14\1\15"+
-    "\1\16\1\17\2\20\1\4\5\0\1\21\2\0\1\22"+
-    "\1\23";
+    "\1\0\1\1\2\2\1\3\1\4\1\5\2\1\1\6"+
+    "\1\7\1\10\1\11\1\12\1\3\1\13\1\14\1\15"+
+    "\2\16\1\17\1\3\5\0\1\20\2\0\1\21\1\22";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[32];
@@ -130,8 +127,8 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\30\0\60\0\30\0\110\0\30\0\140\0\170"+
-    "\0\220\0\30\0\250\0\300\0\30\0\30\0\30\0\30"+
-    "\0\30\0\30\0\30\0\300\0\30\0\330\0\360\0\u0108"+
+    "\0\220\0\30\0\250\0\30\0\30\0\30\0\30\0\30"+
+    "\0\30\0\30\0\300\0\30\0\30\0\330\0\360\0\u0108"+
     "\0\u0120\0\u0138\0\u0150\0\u0168\0\u0180\0\u0198\0\30\0\30";
 
   private static int [] zzUnpackRowMap() {
@@ -158,15 +155,15 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_TRANS = zzUnpacktrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
-    "\2\2\1\11\1\12\1\13\1\14\1\15\1\16\1\17"+
-    "\1\20\1\21\1\22\1\23\1\24\1\25\1\26\31\0"+
-    "\1\3\32\0\1\17\31\0\1\6\1\17\1\0\1\27"+
+    "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\2\2"+
+    "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
+    "\1\21\1\22\1\23\1\24\1\2\1\25\1\26\31\0"+
+    "\1\3\31\0\1\17\31\0\1\6\1\17\1\0\1\27"+
     "\24\0\1\17\2\0\1\30\25\0\1\31\31\0\1\32"+
     "\26\0\1\33\33\0\1\17\22\0\1\17\4\0\1\17"+
-    "\21\0\1\17\33\0\1\34\23\0\1\17\20\0\1\17"+
-    "\21\0\1\35\15\0\1\36\30\0\1\37\31\0\1\40"+
-    "\15\0";
+    "\21\0\1\17\33\0\1\34\23\0\1\17\21\0\1\17"+
+    "\25\0\1\35\10\0\1\36\30\0\1\37\31\0\1\40"+
+    "\16\0";
 
   private static int [] zzUnpacktrans() {
     int [] result = new int[432];
@@ -213,7 +210,7 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\1\11\1\1\1\11\1\1\1\11\3\1\1\11"+
-    "\2\1\7\11\1\1\1\11\1\1\5\0\1\1\2\0"+
+    "\1\1\7\11\1\1\2\11\1\1\5\0\1\1\2\0"+
     "\2\11";
 
   private static int [] zzUnpackAttribute() {
@@ -277,12 +274,15 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private int zzFinalHighSurrogate = 0;
 
   /** Number of newlines encountered up to the start of the matched text. */
+  @SuppressWarnings("unused")
   private int yyline;
 
   /** Number of characters from the last newline up to the start of the matched text. */
+  @SuppressWarnings("unused")
   private int yycolumn;
 
   /** Number of characters up to the start of the matched text. */
+  @SuppressWarnings("unused")
   private long yychar;
 
   /** Whether the scanner is currently at the beginning of a line. */
@@ -293,18 +293,6 @@ public class AjedrezLexer implements java_cup.runtime.Scanner {
   private boolean zzEOFDone;
 
   /* user code: */
-private StringBuilder currentToken = new StringBuilder();
-String yline = "";
-String column = "";
-// Función para imprimir un error con la posición del token
-private void printError() {
-yline = Integer.toString(yyline + 1);
-column = Integer.toString(yycolumn + 1);
-    if (currentToken.length() > 0) {
-        System.err.println("Error en la línea " + yline + ", columna " + yycolumn + ": Palabra no reconocida -> " + currentToken.toString());
-        currentToken.setLength(0);
-    }
-}
 StringBuilder string = new StringBuilder();
 private Symbol symbol(int type) {
     return new Symbol(type, yyline, yycolumn);
@@ -320,7 +308,7 @@ private Symbol symbol(int type, Object value) {
    *
    * @param   in  the java.io.Reader to read input from.
    */
-  public AjedrezLexer(java.io.Reader in) {
+  public IDLexer(java.io.Reader in) {
     this.zzReader = in;
   }
 
@@ -614,65 +602,6 @@ private Symbol symbol(int type, Object value) {
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
-      yychar+= zzMarkedPosL-zzStartRead;
-
-      boolean zzR = false;
-      int zzCh;
-      int zzCharCount;
-      for (zzCurrentPosL = zzStartRead  ;
-           zzCurrentPosL < zzMarkedPosL ;
-           zzCurrentPosL += zzCharCount ) {
-        zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);
-        zzCharCount = Character.charCount(zzCh);
-        switch (zzCh) {
-        case '\u000B':  // fall through
-        case '\u000C':  // fall through
-        case '\u0085':  // fall through
-        case '\u2028':  // fall through
-        case '\u2029':
-          yyline++;
-          yycolumn = 0;
-          zzR = false;
-          break;
-        case '\r':
-          yyline++;
-          yycolumn = 0;
-          zzR = true;
-          break;
-        case '\n':
-          if (zzR)
-            zzR = false;
-          else {
-            yyline++;
-            yycolumn = 0;
-          }
-          break;
-        default:
-          zzR = false;
-          yycolumn += zzCharCount;
-        }
-      }
-
-      if (zzR) {
-        // peek one character ahead if it is
-        // (if we have counted one line too much)
-        boolean zzPeek;
-        if (zzMarkedPosL < zzEndReadL)
-          zzPeek = zzBufferL[zzMarkedPosL] == '\n';
-        else if (zzAtEOF)
-          zzPeek = false;
-        else {
-          boolean eof = zzRefill();
-          zzEndReadL = zzEndRead;
-          zzMarkedPosL = zzMarkedPos;
-          zzBufferL = zzBuffer;
-          if (eof)
-            zzPeek = false;
-          else
-            zzPeek = zzBufferL[zzMarkedPosL] == '\n';
-        }
-        if (zzPeek) yyline--;
-      }
       zzAction = -1;
 
       zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
@@ -736,123 +665,101 @@ private Symbol symbol(int type, Object value) {
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
             zzDoEOF();
-          {   printError();
-  return new Symbol(ParserSym.EOF);
+          {   return symbol(ParserSym.EOF);
  }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { currentToken.append(yytext());
+            { throw new Error("Caracter no valido: " + yytext());
             }
           // fall through
-          case 20: break;
+          case 19: break;
           case 2:
             { /*Ignorar*/
             }
           // fall through
-          case 21: break;
+          case 20: break;
           case 3:
-            { printError();
+            { return symbol(ParserSym.COMENTARIO, yytext());
+            }
+          // fall through
+          case 21: break;
+          case 4:
+            { return symbol(ParserSym.JAQUEMATE, yytext());
             }
           // fall through
           case 22: break;
-          case 4:
-            { printError();
-return Symbol(ParserSym.COMENTARIO, yytext(), yline, column);
+          case 5:
+            { return symbol(ParserSym.JAQUE, yytext());
             }
           // fall through
           case 23: break;
-          case 5:
-            { printError();
-return Symbol(ParserSym.JAQUEMATE, yytext(), yline, column);
+          case 6:
+            { return symbol(ParserSym.FILA, yytext());
             }
           // fall through
           case 24: break;
-          case 6:
-            { printError();
-return Symbol(ParserSym.JAQUE, yytext(), yline, column);
+          case 7:
+            { return symbol(ParserSym.PROMOCION, yytext());
             }
           // fall through
           case 25: break;
-          case 7:
-            { printError();
-return Token(ParserSym.FILA, yytext(), yline, column);
+          case 8:
+            { return symbol(ParserSym.ALFIL, yytext());
             }
           // fall through
           case 26: break;
-          case 8:
-            { printError();
-return Symbol(ParserSym.PROMOCION, yytext(), yline, column);
+          case 9:
+            { return symbol(ParserSym.CABALLO, yytext());
             }
           // fall through
           case 27: break;
-          case 9:
-            { printError();
-return Symbol(ParserSym.ALFIL, yytext(), yline, column);
+          case 10:
+            { return symbol(ParserSym.DAMA, yytext());
             }
           // fall through
           case 28: break;
-          case 10:
-            { printError();
-return Symbol(ParserSym.CABALLO, yytext(), yline, column);
+          case 11:
+            { return symbol(ParserSym.PEON, yytext());
             }
           // fall through
           case 29: break;
-          case 11:
-            { printError();
-return Symbol(ParserSym.DAMA, yytext(), yline, column);
+          case 12:
+            { return symbol(ParserSym.REY, yytext());
             }
           // fall through
           case 30: break;
-          case 12:
-            { printError();
-return Symbol(ParserSym.PEON, yytext(), yline, column);
+          case 13:
+            { return symbol(ParserSym.TORRE, yytext());
             }
           // fall through
           case 31: break;
-          case 13:
-            { printError();
-return Symbol(ParserSym.REY, yytext(), yline, column);
+          case 14:
+            { return symbol(ParserSym.COLUMNA, yytext());
             }
           // fall through
           case 32: break;
-          case 14:
-            { printError();
-return Symbol(ParserSym.TORRE, yytext(), yline, column);
+          case 15:
+            { return symbol(ParserSym.CAPTURA, yytext());
             }
           // fall through
           case 33: break;
-          case 15:
-            { printError();
-return Symbol(ParserSym.CAPTURA, yytext(), yline, column);
+          case 16:
+            { return symbol(ParserSym.ENROQUECORTO, yytext());
             }
           // fall through
           case 34: break;
-          case 16:
-            { printError();
-return Symbol(ParserSym.COLUMNA, yytext(), yline, column);
+          case 17:
+            { return symbol(ParserSym.CAP, yytext());
             }
           // fall through
           case 35: break;
-          case 17:
-            { printError();
-return Symbol(ParserSym.ENROQUECORTO, yytext(), yline, column);
+          case 18:
+            { return symbol(ParserSym.ENROQUELARGO, yytext());
             }
           // fall through
           case 36: break;
-          case 18:
-            { printError();
-return Symbol(ParserSym.CAP, yytext(), yline, column);
-            }
-          // fall through
-          case 37: break;
-          case 19:
-            { printError();
-return Symbol(ParserSym.ENROQUELARGO, yytext(), yline, column);
-            }
-          // fall through
-          case 38: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

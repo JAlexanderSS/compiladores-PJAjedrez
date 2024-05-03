@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cup/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/jflex/Lex.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jflex/Lex.flex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -30,6 +47,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.App.executor": "Run",
+    "JUnit.ParaserTest.executor": "Debug",
+    "JUnit.ParaserTest.parserAnalisys.executor": "Debug",
+    "JUnit.ParaserTest.parserAnalysis.executor": "Debug",
+    "Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor": "Run",
     "Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -54,6 +75,62 @@
       <recent name="C:\Users\marle\uni\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores" />
     </key>
   </component>
+  <component name="RunManager" selected="JUnit.ParaserTest.parserAnalysis">
+    <configuration name="ParaserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pjCompiladores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.compiladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.compiladores" />
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.ParaserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParaserTest.parserAnalisys" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pjCompiladores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.compiladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.compiladores" />
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.ParaserTest" />
+      <option name="METHOD_NAME" value="parserAnalisys" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParaserTest.parserAnalysis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pjCompiladores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.compiladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.compiladores" />
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.ParaserTest" />
+      <option name="METHOD_NAME" value="parserAnalysis" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ParaserTest.parserAnalysis" />
+        <item itemvalue="JUnit.ParaserTest.parserAnalisys" />
+        <item itemvalue="JUnit.ParaserTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,11 +150,27 @@
       <workItem from="1712416629636" duration="7908000" />
       <workItem from="1713732633994" duration="6192000" />
       <workItem from="1713751259851" duration="4789000" />
-      <workItem from="1713921189050" duration="3356000" />
+      <workItem from="1713921189050" duration="3499000" />
+      <workItem from="1714184141211" duration="2944000" />
+      <workItem from="1714575812206" duration="1130000" />
+      <workItem from="1714586859402" duration="13943000" />
+      <workItem from="1714662329371" duration="20000" />
+      <workItem from="1714667593547" duration="15924000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
