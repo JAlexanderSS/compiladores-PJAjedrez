@@ -9,10 +9,11 @@ non terminal captura, cdp, cdpap, pdp, dpc, dpf, dpa, cca, movimiento, jque, jqu
 non terminal desplazamiento;
 non terminal pieza;
 non terminal casilla;
+non terminal desplazamientopeon;
 
 start with entrada;
 
-entrada ::= movimientofinal {: RESULT = "Se logro algo xd"; :};
+entrada ::= movimientofinal {: RESULT = "Desplazamiento de pieza"; :} ;
 
 movimientofinal ::= movimiento comentario | jque comentario | jquemate comentario;
 
@@ -26,7 +27,9 @@ pieza ::= REY | DAMA | ALFIL | CABALLO | TORRE | PEON;
 
 casilla ::= COLUMNA FILA;
 
-desplazamiento ::= pieza casilla;
+desplazamiento ::= pieza casilla | desplazamientopeon ;
+
+desplazamientopeon ::= casilla;
 
 captura ::= pieza CAPTURA casilla;
 
