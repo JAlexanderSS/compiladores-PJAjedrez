@@ -1,4 +1,5 @@
 package org.compiladores;
+import org.compiladores.semantica.reglasSemanticas;
 import java_cup.runtime.*;
 
 class Parser;
@@ -13,7 +14,7 @@ non terminal desplazamientopeon;
 
 start with entrada;
 
-entrada ::= movimientofinal {: RESULT = "Desplazamiento de pieza"; :} ;
+entrada ::= movimientofinal {: RESULT = reglasSemanticas.prueba(); :} ;
 
 movimientofinal ::= movimiento comentario | jque comentario | jquemate comentario;
 
@@ -23,11 +24,19 @@ jque ::= movimiento JAQUE;
 
 jquemate ::= movimiento JAQUEMATE;
 
-pieza ::= REY | DAMA | ALFIL | CABALLO | TORRE | PEON;
+pieza ::=
+    REY {: reglasSemanticas.tipoPieza("Rey");:}
+    | DAMA {: reglasSemanticas.tipoPieza("Dama");:}
+    | ALFIL {: reglasSemanticas.tipoPieza("Alfil");:}
+    | CABALLO {: reglasSemanticas.tipoPieza("Caballo");:}
+    | TORRE {: reglasSemanticas.tipoPieza("Torre");:}
+    | PEON {: reglasSemanticas.tipoPieza("Peon");:} ;
 
-casilla ::= COLUMNA FILA;
+casilla ::= COLUMNA:col FILA:fil {: reglasSemanticas.casilla(col, fil); :};
 
-desplazamiento ::= pieza casilla | desplazamientopeon ;
+desplazamiento ::=
+    pieza casilla
+    | desplazamientopeon {: reglasSemanticas.tipoPieza("Peon");:};
 
 desplazamientopeon ::= casilla;
 
