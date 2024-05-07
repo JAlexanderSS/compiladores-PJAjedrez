@@ -14,15 +14,36 @@ non terminal desplazamientopeon;
 
 start with entrada;
 
-entrada ::= movimientofinal {: RESULT = reglasSemanticas.prueba(); :} ;
+entrada ::=
+    movimientofinal {: RESULT = reglasSemanticas.prueba(); :}
+    ;
 
-movimientofinal ::= movimiento comentario | jque comentario | jquemate comentario;
+movimientofinal ::=
+    movimiento comentario
+    | jque comentario
+    | jquemate comentario
+    ;
 
-movimiento ::= desplazamiento | captura | cdp | cdpap | pdp | dpc | dpf | dpa | ENROQUECORTO | ENROQUELARGO;
+movimiento ::=
+    desplazamiento
+    | captura
+    | cdp
+    | cdpap
+    | pdp
+    | dpc
+    | dpf
+    | dpa
+    | ENROQUECORTO
+    | ENROQUELARGO
+    ;
 
-jque ::= movimiento JAQUE;
+jque ::=
+    movimiento JAQUE
+    ;
 
-jquemate ::= movimiento JAQUEMATE;
+jquemate ::=
+    movimiento JAQUEMATE
+    ;
 
 pieza ::=
     REY {: reglasSemanticas.tipoPieza("Rey");:}
@@ -30,30 +51,56 @@ pieza ::=
     | ALFIL {: reglasSemanticas.tipoPieza("Alfil");:}
     | CABALLO {: reglasSemanticas.tipoPieza("Caballo");:}
     | TORRE {: reglasSemanticas.tipoPieza("Torre");:}
-    | PEON {: reglasSemanticas.tipoPieza("Peon");:} ;
+    | PEON {: reglasSemanticas.tipoPieza("Peon");:}
+    ;
 
-casilla ::= COLUMNA:col FILA:fil {: reglasSemanticas.casilla(col, fil); :};
+casilla ::=
+    COLUMNA:col FILA:fil {: reglasSemanticas.casilla((String) col, (String) fil); :}
+    ;
 
 desplazamiento ::=
     pieza casilla
-    | desplazamientopeon {: reglasSemanticas.tipoPieza("Peon");:};
+    | desplazamientopeon {: reglasSemanticas.tipoPieza("Peon");:}
+    ;
 
-desplazamientopeon ::= casilla;
+desplazamientopeon ::=
+    casilla
+    ;
 
-captura ::= pieza CAPTURA casilla;
+captura ::=
+    pieza CAPTURA casilla
+    ;
 
-cdp ::= COLUMNA CAPTURA casilla;
+cdp ::=
+    COLUMNA CAPTURA casilla
+    ;
 
-cdpap ::= COLUMNA CAPTURA casilla PROMOCION CAP;
+cdpap ::=
+    COLUMNA CAPTURA casilla PROMOCION CAP
+    ;
 
-pdp ::= desplazamiento PROMOCION pieza;
+pdp ::=
+    desplazamiento PROMOCION pieza
+    ;
 
-cca ::= CAPTURA | ;
+cca ::=
+    CAPTURA
+    |
+    ;
 
-dpc ::= pieza COLUMNA cca casilla;
+dpc ::=
+    pieza COLUMNA cca casilla
+    ;
 
-dpf ::= pieza FILA cca casilla;
+dpf ::=
+    pieza FILA cca casilla
+    ;
 
-dpa ::= pieza casilla cca casilla;
+dpa ::=
+    pieza casilla cca casilla
+    ;
 
-comentario ::= COMENTARIO | ;
+comentario ::=
+    COMENTARIO
+    |
+    ;

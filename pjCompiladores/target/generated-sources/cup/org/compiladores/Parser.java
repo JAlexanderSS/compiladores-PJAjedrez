@@ -408,7 +408,7 @@ class CUP$Parser$actions {
 		int filleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int filright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object fil = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 reglasSemanticas.casilla (col, fil);
+		 reglasSemanticas.casilla((String) col, (String) fil); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("casilla",16, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
