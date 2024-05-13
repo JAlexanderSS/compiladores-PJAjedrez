@@ -1,5 +1,5 @@
 package org.compiladores;
-import org.compiladores.semantica.reglasSemanticas;
+import org.compiladores.semantica.Semantica;
 import java_cup.runtime.*;
 
 class Parser;
@@ -15,7 +15,7 @@ non terminal desplazamientopeon;
 start with entrada;
 
 entrada ::=
-    movimientofinal {: RESULT = reglasSemanticas.prueba(); :}
+    movimientofinal {: RESULT = Semantica.prueba(); Semantica.valoresObtenidos();  :}
     ;
 
 movimientofinal ::=
@@ -46,21 +46,21 @@ jquemate ::=
     ;
 
 pieza ::=
-    REY {: reglasSemanticas.tipoPieza("Rey");:}
-    | DAMA {: reglasSemanticas.tipoPieza("Dama");:}
-    | ALFIL {: reglasSemanticas.tipoPieza("Alfil");:}
-    | CABALLO {: reglasSemanticas.tipoPieza("Caballo");:}
-    | TORRE {: reglasSemanticas.tipoPieza("Torre");:}
-    | PEON {: reglasSemanticas.tipoPieza("Peon");:}
+    REY {: Semantica.tipoPieza("Rey");:}
+    | DAMA {: Semantica.tipoPieza("Dama");:}
+    | ALFIL {: Semantica.tipoPieza("Alfil");:}
+    | CABALLO {: Semantica.tipoPieza("Caballo");:}
+    | TORRE {: Semantica.tipoPieza("Torre");:}
+    | PEON {: Semantica.tipoPieza("Peon");:}
     ;
 
 casilla ::=
-    COLUMNA:col FILA:fil {: reglasSemanticas.casilla((String) col, (String) fil); :}
+    COLUMNA:col FILA:fil {: Semantica.casilla((String) col, (String) fil); :}
     ;
 
 desplazamiento ::=
     pieza casilla
-    | desplazamientopeon {: reglasSemanticas.tipoPieza("Peon");:}
+    | desplazamientopeon {: Semantica.tipoPieza("Peon");:}
     ;
 
 desplazamientopeon ::=

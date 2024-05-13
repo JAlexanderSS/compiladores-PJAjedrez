@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/PeonesDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/cup/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/reglasSemanticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/reglasSemanticas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/piezas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/Peones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/reglasSemanticas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Parser$CUP$Parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/Parser$CUP$Parser$actions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/piezas$Peon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/piezas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/reglasSemanticas.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +40,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -37,10 +55,10 @@
   "keyToString": {
     "Application.App.executor": "Run",
     "Application.piezas.executor": "Run",
-    "Application.reglasSemanticas.executor": "Debug",
+    "Application.reglasSemanticas.executor": "Run",
     "JUnit.ParaserTest.executor": "Debug",
     "JUnit.ParaserTest.parserAnalisys.executor": "Debug",
-    "JUnit.ParaserTest.parserAnalysis.executor": "Debug",
+    "JUnit.ParaserTest.parserAnalysis.executor": "Run",
     "Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor": "Run",
     "Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -70,9 +88,9 @@
       <recent name="org.compiladores" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.reglasSemanticas">
-    <configuration name="piezas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.compiladores.blancas.piezas" />
+  <component name="RunManager" selected="JUnit.ParaserTest.parserAnalysis">
+    <configuration name="Peones" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.blancas.Peones" />
       <module name="pjCompiladores" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +102,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="reglasSemanticas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.compiladores.semantica.reglasSemanticas" />
+    <configuration name="Semantica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.semantica.Semantica" />
       <module name="pjCompiladores" />
       <extension name="coverage">
         <pattern>
@@ -146,9 +164,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.reglasSemanticas" />
         <item itemvalue="JUnit.ParaserTest.parserAnalysis" />
-        <item itemvalue="Application.piezas" />
+        <item itemvalue="Application.Semantica" />
+        <item itemvalue="Application.Peones" />
         <item itemvalue="JUnit.ParaserTest.parserAnalisys" />
         <item itemvalue="JUnit.ParaserTest" />
       </list>
@@ -184,6 +202,7 @@
       <workItem from="1715105969552" duration="1476000" />
       <workItem from="1715113439396" duration="6141000" />
       <workItem from="1715121492754" duration="1067000" />
+      <workItem from="1715523583557" duration="18038000" />
     </task>
     <servers />
   </component>
@@ -207,7 +226,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java</url>
           <line>9</line>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

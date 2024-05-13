@@ -5,7 +5,7 @@
 
 package org.compiladores;
 
-import org.compiladores.semantica.reglasSemanticas;
+import org.compiladores.semantica.Semantica;
 import java_cup.runtime.*;
 import java_cup.runtime.XMLElement;
 
@@ -204,7 +204,7 @@ class CUP$Parser$actions {
           case 1: // entrada ::= movimientofinal 
             {
               Object RESULT =null;
-		 RESULT = reglasSemanticas.prueba(); 
+		 RESULT = Semantica.prueba(); Semantica.valoresObtenidos();  
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("entrada",13, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -348,7 +348,7 @@ class CUP$Parser$actions {
           case 17: // pieza ::= REY 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Rey");
+		 Semantica.tipoPieza("Rey");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -357,7 +357,7 @@ class CUP$Parser$actions {
           case 18: // pieza ::= DAMA 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Dama");
+		 Semantica.tipoPieza("Dama");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -366,7 +366,7 @@ class CUP$Parser$actions {
           case 19: // pieza ::= ALFIL 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Alfil");
+		 Semantica.tipoPieza("Alfil");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -375,7 +375,7 @@ class CUP$Parser$actions {
           case 20: // pieza ::= CABALLO 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Caballo");
+		 Semantica.tipoPieza("Caballo");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -384,7 +384,7 @@ class CUP$Parser$actions {
           case 21: // pieza ::= TORRE 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Torre");
+		 Semantica.tipoPieza("Torre");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -393,7 +393,7 @@ class CUP$Parser$actions {
           case 22: // pieza ::= PEON 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Peon");
+		 Semantica.tipoPieza("Peon");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("pieza",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -408,7 +408,7 @@ class CUP$Parser$actions {
 		int filleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int filright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object fil = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 reglasSemanticas.casilla((String) col, (String) fil); 
+		 Semantica.casilla((String) col, (String) fil); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("casilla",16, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -426,7 +426,7 @@ class CUP$Parser$actions {
           case 25: // desplazamiento ::= desplazamientopeon 
             {
               Object RESULT =null;
-		 reglasSemanticas.tipoPieza("Peon");
+		 Semantica.tipoPieza("Peon");
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("desplazamiento",14, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
