@@ -1,4 +1,5 @@
 package org.compiladores;
+import org.compiladores.tablero.Tablero;
 
 public class App
 {

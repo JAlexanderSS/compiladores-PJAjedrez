@@ -1,4 +1,4 @@
-package org.compiladores.blancas;
+package org.compiladores.tablero.blancas;
 import lombok.*;
 
 @Getter @Setter

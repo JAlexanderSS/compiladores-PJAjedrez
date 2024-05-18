@@ -1,9 +1,8 @@
 package org.compiladores.semantica;
-import org.compiladores.blancas.Peones;
+import org.compiladores.tablero.Tablero;
+
 public class Semantica {
-
-    static Peones peones = new Peones();
-
+    static SemanticaPeon semanticaPeon = new SemanticaPeon();
     // Variables globales
     static String tipoPieza = "";
     static int cordenadax = 0;
@@ -23,15 +22,15 @@ public class Semantica {
 
     // Recibimos las coordenadas de la pieza
     public static void casilla(String columna, String fila) {
-        cordenadax = Integer.parseInt(fila);
-        posiccionY(columna);
+        posiccionX(columna);
+        cordenaday = Integer.parseInt(fila);
     }
 
     // Función para obtener la posición en Y de la pieza
-    public static void posiccionY(String letraColumna) {
+    public static void posiccionX(String letraColumna) {
         for (int i = 0; i < ey.length; i++) {
             if (ey[i].equals(letraColumna)) {
-                cordenaday = i + 1;
+                cordenadax = i + 1;
                 break; // Una vez encontrado el elemento, se puede salir del bucle
             }
         }
@@ -42,6 +41,9 @@ public class Semantica {
         System.out.println("Tipo de pieza: " + tipoPieza);
         System.out.println("Cordenada X: " + cordenadax);
         System.out.println("Cordenada Y: " + cordenaday);
-        peones.crearPeonesBlancos();
+
+        if (tipoPieza.equals("Peon")){
+            semanticaPeon.validacionDeMovimiento(cordenadax, cordenaday);
+        }
     }
 }
