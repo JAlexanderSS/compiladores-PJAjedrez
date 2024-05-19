@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/MovimientosPeones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/Peones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/PeonesDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/Peones$Peon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/Peones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/PeonesDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/Semantica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/Semantica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/SemanticaPeon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/SemanticaPeon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" afterDir="false" />
     </list>
@@ -28,6 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -39,13 +56,18 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SemanticaPeon.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tablero.executor&quot;: &quot;Run&quot;,
+    &quot;Application.piezas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.reglasSemanticas.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ParaserTest.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.ParaserTest.parserAnalisys.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ParaserTest.parserAnalysis.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ParaserTest.parserAnalysis.executor&quot;: &quot;Run&quot;,
     &quot;Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor&quot;: &quot;Run&quot;,
     &quot;Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;branchSirin&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -66,9 +88,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marle\uni\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.compiladores" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.ParaserTest.parserAnalysis">
-    <configuration name="ParaserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.App" />
       <module name="pjCompiladores" />
       <extension name="coverage">
         <pattern>
@@ -76,25 +102,45 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.compiladores" />
-      <option name="MAIN_CLASS_NAME" value="org.compiladores.ParaserTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParaserTest.parserAnalisys" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Semantica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.semantica.Semantica" />
       <module name="pjCompiladores" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.compiladores.*" />
+          <option name="PATTERN" value="org.compiladores.semantica.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.compiladores" />
-      <option name="MAIN_CLASS_NAME" value="org.compiladores.ParaserTest" />
-      <option name="METHOD_NAME" value="parserAnalisys" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SemanticaPeon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.semantica.SemanticaPeon" />
+      <module name="pjCompiladores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.compiladores.semantica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tablero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.compiladores.tablero.Tablero" />
+      <module name="pjCompiladores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.compiladores.tablero.Tablero" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +149,7 @@
       <module name="pjCompiladores" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.compiladores.*" />
+          <option name="PATTERN" value="org.compiladores.semantica.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,16 +164,18 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ParaserTest.parserAnalysis" />
-        <item itemvalue="JUnit.ParaserTest.parserAnalisys" />
-        <item itemvalue="JUnit.ParaserTest" />
+        <item itemvalue="Application.SemanticaPeon" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.Tablero" />
+        <item itemvalue="Application.Semantica" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -147,14 +195,35 @@
       <workItem from="1714575812206" duration="1130000" />
       <workItem from="1714586859402" duration="13943000" />
       <workItem from="1714662329371" duration="20000" />
-      <workItem from="1714667593547" duration="15924000" />
-      <workItem from="1716042349542" duration="1449000" />
-      <workItem from="1716066042838" duration="1011000" />
+      <workItem from="1714667593547" duration="16131000" />
+      <workItem from="1714964804956" duration="2004000" />
+      <workItem from="1715027878343" duration="7846000" />
+      <workItem from="1715105969552" duration="1476000" />
+      <workItem from="1715113439396" duration="6141000" />
+      <workItem from="1715121492754" duration="1067000" />
+      <workItem from="1715523583557" duration="18038000" />
+      <workItem from="1715652053483" duration="3928000" />
+      <workItem from="1715911016001" duration="576000" />
+      <workItem from="1715911763697" duration="3409000" />
+      <workItem from="1715970320268" duration="1801000" />
+      <workItem from="1715977626497" duration="5719000" />
+      <workItem from="1715989168763" duration="7631000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -162,9 +231,19 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java</url>
           <line>9</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="        String expresion = &quot;a7&quot;;&#10;" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pjCompiladores$ParaserTest_parserAnalysis.ic" NAME="ParaserTest.parserAnalysis Coverage Results" MODIFIED="1715017272714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>org.compiladores.*</FILTER>
+    </SUITE>
   </component>
 </project>
