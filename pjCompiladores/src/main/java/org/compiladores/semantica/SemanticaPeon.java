@@ -45,4 +45,10 @@ public class SemanticaPeon {
 
     public void movimientoSimple(int indice, int x, int y){
     }
+
+    public void movimientos_Simples(int indice) {
+        Peones peon = tablero.obtenerPeon(indice);
+        int x = peon.getX();
+        int y = peon.getY();
+    }
 }

@@ -1,0 +1,124 @@
+Index: src/test/java/org/compiladores/ParaserTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.compiladores;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.io.StringReader;\r\n\r\npublic class ParaserTest {\r\n    @Test\r\n    public void parserAnalysis() throws Exception {\r\n        String expresion = \"a7\";\r\n        IDLexer lexer = new IDLexer(new StringReader(expresion));\r\n        Parser p = new Parser(lexer);\r\n        String resultado = (String) p.parse().value;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/compiladores/ParaserTest.java b/src/test/java/org/compiladores/ParaserTest.java
+--- a/src/test/java/org/compiladores/ParaserTest.java	(revision 82c3e4d804314055ae0d1fd07befb621fb727431)
++++ b/src/test/java/org/compiladores/ParaserTest.java	(date 1714830202191)
+@@ -7,7 +7,7 @@
+ public class ParaserTest {
+     @Test
+     public void parserAnalysis() throws Exception {
+-        String expresion = "a7";
++        String expresion = "Aa7";
+         IDLexer lexer = new IDLexer(new StringReader(expresion));
+         Parser p = new Parser(lexer);
+         String resultado = (String) p.parse().value;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aa3651a0-c8e0-44c0-91c1-dc249d05e20e\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../README.md\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/encodings.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/cup/parser.cup\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/cup/parser.cup\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/compiladores/App.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/compiladores/App.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/compiladores/Token.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/jflex/Lex.flex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/jflex/Lex.flex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/compiladores/App.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/org/compiladores/App.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/compiladores/Token.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2ejSjPpeKpiJlv2aRO8U1oEmyJE\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.App.executor\": \"Run\",\r\n    \"JUnit.ParaserTest.executor\": \"Debug\",\r\n    \"JUnit.ParaserTest.parserAnalisys.executor\": \"Debug\",\r\n    \"JUnit.ParaserTest.parserAnalysis.executor\": \"Debug\",\r\n    \"Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor\": \"Run\",\r\n    \"Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"branchSirin\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\marle\\uni\\septimo\\compiladores\\compiladores-PJAjedrez\\pjCompiladores\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.ParaserTest.parserAnalysis\">\r\n    <configuration name=\"ParaserTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"pjCompiladores\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.compiladores.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.compiladores\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.compiladores.ParaserTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ParaserTest.parserAnalisys\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"pjCompiladores\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.compiladores.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.compiladores\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.compiladores.ParaserTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"parserAnalisys\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ParaserTest.parserAnalysis\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"pjCompiladores\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.compiladores.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.compiladores\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.compiladores.ParaserTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"parserAnalysis\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.ParaserTest.parserAnalysis\" />\r\n        <item itemvalue=\"JUnit.ParaserTest.parserAnalisys\" />\r\n        <item itemvalue=\"JUnit.ParaserTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aa3651a0-c8e0-44c0-91c1-dc249d05e20e\" name=\"Changes\" comment=\"\" />\r\n      <created>1712416628531</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712416628531</updated>\r\n      <workItem from=\"1712416629636\" duration=\"7908000\" />\r\n      <workItem from=\"1713732633994\" duration=\"6192000\" />\r\n      <workItem from=\"1713751259851\" duration=\"4789000\" />\r\n      <workItem from=\"1713921189050\" duration=\"3499000\" />\r\n      <workItem from=\"1714184141211\" duration=\"2944000\" />\r\n      <workItem from=\"1714575812206\" duration=\"1130000\" />\r\n      <workItem from=\"1714586859402\" duration=\"13943000\" />\r\n      <workItem from=\"1714662329371\" duration=\"20000\" />\r\n      <workItem from=\"1714667593547\" duration=\"15924000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java</url>\r\n          <line>9</line>\r\n          <option name=\"timeStamp\" value=\"7\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 82c3e4d804314055ae0d1fd07befb621fb727431)
++++ b/.idea/workspace.xml	(date 1714839153248)
+@@ -5,21 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/cup/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/Token.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/TokenConstant.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/jflex/Lex.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jflex/Lex.flex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/AjedrezLexer.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Token.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/TokenConstant.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/generated-sources/jflex/org/compiladores/AjedrezLexer.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/IDLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/IDLexer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Parser$CUP$Parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/Parser$CUP$Parser$actions.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/Parser.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,32 +35,33 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.App.executor": "Run",
+-    "JUnit.ParaserTest.executor": "Debug",
+-    "JUnit.ParaserTest.parserAnalisys.executor": "Debug",
+-    "JUnit.ParaserTest.parserAnalysis.executor": "Debug",
+-    "Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor": "Run",
+-    "Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "branchSirin",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.App.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.ParaserTest.executor&quot;: &quot;Debug&quot;,
++    &quot;JUnit.ParaserTest.parserAnalisys.executor&quot;: &quot;Debug&quot;,
++    &quot;JUnit.ParaserTest.parserAnalysis.executor&quot;: &quot;Debug&quot;,
++    &quot;Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;branchSirin&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.JFlex&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\marle\uni\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores" />
+@@ -156,6 +148,8 @@
+       <workItem from="1714586859402" duration="13943000" />
+       <workItem from="1714662329371" duration="20000" />
+       <workItem from="1714667593547" duration="15924000" />
++      <workItem from="1714830486439" duration="2129000" />
++      <workItem from="1714835881746" duration="3262000" />
+     </task>
+     <servers />
+   </component>
