@@ -68,7 +68,7 @@ desplazamientopeon ::=
     ;
 
 captura ::=
-    pieza CAPTURA casilla
+    pieza CAPTURA casilla {: Semantica.tipoMovimiento(1);:}
     ;
 
 cdp ::=

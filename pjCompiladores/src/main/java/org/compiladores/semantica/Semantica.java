@@ -55,7 +55,7 @@ public class Semantica {
         System.out.println("Cordenada Y: " + cordenaday);
 
         if (tipoPieza.equals("Peon") && !captura) {
-            semanticaPeon.validacionDeMovimiento(cordenadax, cordenaday);
+            semanticaPeon.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }

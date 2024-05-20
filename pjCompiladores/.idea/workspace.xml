@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2024_16_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/cup/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/MovimientosPeones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,37 +42,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SemanticaPeon.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Tablero.executor&quot;: &quot;Run&quot;,
-    &quot;Application.piezas.executor&quot;: &quot;Run&quot;,
-    &quot;Application.reglasSemanticas.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ParaserTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ParaserTest.parserAnalisys.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ParaserTest.parserAnalysis.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;branchSirin&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.SemanticaPeon.executor": "Run",
+    "Application.Tablero.executor": "Run",
+    "Application.piezas.executor": "Run",
+    "Application.reglasSemanticas.executor": "Run",
+    "JUnit.ParaserTest.executor": "Debug",
+    "JUnit.ParaserTest.parserAnalisys.executor": "Debug",
+    "JUnit.ParaserTest.parserAnalysis.executor": "Debug",
+    "Maven.pjCompiladores [com.github.vbmacher:cup-maven-plugin:11b-20160615-3:generate].executor": "Run",
+    "Maven.pjCompiladores [de.jflex:jflex-maven-plugin:1.9.1:generate].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "branchSirin",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marle/uni/septimo/compiladores/compiladores-PJAjedrez/pjCompiladores",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marle\uni\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores" />
@@ -197,6 +200,7 @@
       <workItem from="1715989168763" duration="8678000" />
       <workItem from="1716154366008" duration="89000" />
       <workItem from="1716154471952" duration="12435000" />
+      <workItem from="1716236171033" duration="6783000" />
     </task>
     <servers />
   </component>

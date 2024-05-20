@@ -32,9 +32,11 @@ public class SemanticaPeon {
             Peones peon = tablero.obtenerPeon(i);
             int initialX = peon.getX();
             int initialY = peon.getY();
-            peonesList[i].add(new int[]{initialX, initialY + 1});
+            peonesList[i].add(new int[]{initialX, initialY + 1, 0});
             // Agragar mas movimientos iniciales
-            peonesList[i].add(new int[]{initialX, initialY + 2});
+            peonesList[i].add(new int[]{initialX, initialY + 2, 0});
+            movimientosDeCapturaDerecha(i);
+            movimientosDeCapturaIzquierda(i);
         }
     }
 
@@ -43,30 +45,23 @@ public class SemanticaPeon {
         gestorPeones.moverPeon(indice, nuevaX, nuevaY);
     }
 
-    // Método para mostrar la posición de un peón
-    public void mostrarPosicionPeon(int indice) {
-        Peones peon = tablero.obtenerPeon(indice);
-        int resultado = peon.getX() + peon.getY();
-        System.out.println("Posición del peón " + indice + ":");
-        System.out.println("x: " + peon.getX());
-        System.out.println("y: " + peon.getY());
-        System.out.println("Suma: " + resultado);
-    }
-
     // Método para validar un movimiento
-    public void validacionDeMovimiento(int x, int y) {
-        movimientoSimple(x, y);
+    public void validacionDeMovimiento(int x, int y, int tipoMovimiento) {
+        if (tipoMovimiento == 0){
+            movimientoSimple(x, y, tipoMovimiento);
+        } else if (tipoMovimiento == 1){
+            movimientoDeCaptura(x, y, tipoMovimiento);
+        }
     }
 
     // Método para revisar si las coordenadas coinciden con algún peón
-    public void movimientoSimple(int x, int y) {
+    public void movimientoSimple(int x, int y, int tipoMovimiento) {
         for (int i = 0; i < peonesList.length; i++) {
             for (int[] coordenadas : peonesList[i]) {
-                if (coordenadas[0] == x && coordenadas[1] == y) {
+                if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento) {
                     System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i);
                     gestorPeones.moverPeon(i, x, y);
-                    resetearCoordenadasPeon(i);
-                    movimientos_Simples(i);
+                    reseteoYGeneracion(i);
                     return;
                 }
             }
@@ -74,18 +69,53 @@ public class SemanticaPeon {
         System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
     }
 
+    public void movimientoDeCaptura(int x, int y, int tipoMovimiento) {
+        for (int i = 0; i < peonesList.length; i++) {
+            for (int[] coordenadas : peonesList[i]) {
+                if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento) {
+                    System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura.");
+                    gestorPeones.moverPeon(i, x, y);
+                    reseteoYGeneracion(i);
+                    return;
+                }
+            }
+        }
+        System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
+    }
+
+    public void reseteoYGeneracion(int indice){
+        resetearCoordenadasPeon(indice);
+        movimientos_Simples(indice);
+        movimientosDeCapturaDerecha(indice);
+        movimientosDeCapturaIzquierda(indice);
+    }
+
     // Método para registrar movimientos simples de los peones
     public void movimientos_Simples(int indice) {
         Peones peon = tablero.obtenerPeon(indice);
         int newY = peon.getY() + 1;
         if (newY <= 8) {
-            peonesList[indice].add(new int[]{peon.getX(), newY});
+            peonesList[indice].add(new int[]{peon.getX(), newY, 0});
         }
-
-        System.out.println("Nuevas coordeadas en X " + peon.getX() + " En y " + peon.getY() + " Del peon: " + indice);
-        System.out.println("La jugabilidad del peon es:  " + peon.isJugado());
     }
 
+    public void movimientosDeCapturaDerecha(int indice) {
+        Peones peon = tablero.obtenerPeon(indice);
+        int newY = peon.getY() + 1;
+        int newX = peon.getX() + 1;
+        if (newY <= 8 && newX <= 8 && newX >= 1) {
+            peonesList[indice].add(new int[]{newX, newY, 1});
+        }
+    }
+
+    public void movimientosDeCapturaIzquierda(int indice) {
+        Peones peon = tablero.obtenerPeon(indice);
+        int newY = peon.getY() + 1;
+        int newX = peon.getX() - 1;
+        if (newY <= 8 && newX <= 8 && newX >= 1) {
+            peonesList[indice].add(new int[]{newX, newY, 1});
+        }
+    }
     // Método para resetear las coordenadas de un peón específico
     public void resetearCoordenadasPeon(int indice) {
         peonesList[indice].clear();

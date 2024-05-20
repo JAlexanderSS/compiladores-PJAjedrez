@@ -444,7 +444,7 @@ class CUP$Parser$actions {
           case 27: // captura ::= pieza CAPTURA casilla 
             {
               Object RESULT =null;
-
+		 Semantica.tipoMovimiento(1);
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("captura",0, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
