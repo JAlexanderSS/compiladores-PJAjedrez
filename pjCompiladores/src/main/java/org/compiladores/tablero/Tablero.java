@@ -11,7 +11,7 @@ public class Tablero {
         peones = new Peones[8];
         for (int i = 0; i < 8; i++) {
             peones[i] = new Peones();
-            peones[i].setX(i+1);
+            peones[i].setX(i + 1);
         }
     }
 

@@ -249,7 +249,7 @@ class CUP$Parser$actions {
           case 6: // movimiento ::= captura 
             {
               Object RESULT =null;
-
+		 Semantica.captura(true);
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("movimiento",8, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -426,7 +426,7 @@ class CUP$Parser$actions {
           case 25: // desplazamiento ::= desplazamientopeon 
             {
               Object RESULT =null;
-		 Semantica.tipoPieza("Peon");
+		 Semantica.tipoPieza("Peon"); Semantica.tipoMovimiento(0);
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("desplazamiento",14, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;

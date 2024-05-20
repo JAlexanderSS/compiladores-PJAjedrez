@@ -1,4 +1,5 @@
 package org.compiladores.tablero.blancas;
+
 import org.compiladores.tablero.Tablero;
 
 public class GestorPeones {
@@ -6,6 +7,11 @@ public class GestorPeones {
     public void moverPeon(int indice, int nuevaX, int nuevaY) {
         Tablero tablero = Tablero.obtenerInstancia();
         Peones peon = tablero.obtenerPeon(indice);
+
+        if (!peon.isJugado()) {
+            peon.setJugado(true);
+        }
+
         peon.setX(nuevaX);
         peon.setY(nuevaY);
     }

@@ -1,7 +1,9 @@
 package org.compiladores.tablero.blancas;
+
 import lombok.*;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Peones {
     private int x;
     private int y = 2;

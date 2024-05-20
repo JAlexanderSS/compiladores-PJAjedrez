@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3651a0-c8e0-44c0-91c1-dc249d05e20e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/MovimientosPeones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_05_2024_11_19__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/Peones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/blancas/PeonesDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cup/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cup/parser.cup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/Semantica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/semantica/SemanticaPeon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/compiladores/ParaserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/Peones$Peon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/Peones.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/blancas/PeonesDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/Semantica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/Semantica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/SemanticaPeon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/compiladores/semantica/SemanticaPeon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/compiladores/ParaserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/GestorPeones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/compiladores/tablero/blancas/Peones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/cup/org/compiladores/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +194,9 @@
       <workItem from="1715911763697" duration="3409000" />
       <workItem from="1715970320268" duration="1801000" />
       <workItem from="1715977626497" duration="5719000" />
-      <workItem from="1715989168763" duration="7631000" />
+      <workItem from="1715989168763" duration="8678000" />
+      <workItem from="1716154366008" duration="89000" />
+      <workItem from="1716154471952" duration="12435000" />
     </task>
     <servers />
   </component>
