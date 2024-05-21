@@ -60,11 +60,11 @@ casilla ::=
 
 desplazamiento ::=
     pieza casilla
-    | desplazamientopeon {: Semantica.tipoPieza("Peon"); Semantica.tipoMovimiento(0);:}
+    | desplazamientopeon {: Semantica.tipoMovimiento(0);:}
     ;
 
 desplazamientopeon ::=
-    casilla
+    casilla  {: Semantica.tipoPieza("Peon");:}
     ;
 
 captura ::=
@@ -72,7 +72,7 @@ captura ::=
     ;
 
 cdp ::=
-    COLUMNA CAPTURA casilla
+    COLUMNA CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(1);:}
     ;
 
 cdpap ::=
