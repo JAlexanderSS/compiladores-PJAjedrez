@@ -4,7 +4,7 @@ import lombok.*;
 
 @Getter
 @Setter
-public class Peones {
+public class PeonesBlancas {
     private int x;
     private int y = 2;
     private boolean jugado = false;

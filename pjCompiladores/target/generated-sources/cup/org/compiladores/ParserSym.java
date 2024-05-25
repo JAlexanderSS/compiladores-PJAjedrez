@@ -24,6 +24,7 @@ public interface ParserSym {
   public static final int error = 1;
   public static final int JAQUEMATE = 15;
   public static final int COMENTARIO = 17;
+  public static final int ESPACIO = 18;
   public static final int DAMA = 5;
   public static final int REY = 4;
   public static final String[] terminalNames = new String[] {
@@ -44,7 +45,8 @@ public interface ParserSym {
   "ENROQUECORTO",
   "JAQUEMATE",
   "JAQUE",
-  "COMENTARIO"
+  "COMENTARIO",
+  "ESPACIO"
   };
 }
 

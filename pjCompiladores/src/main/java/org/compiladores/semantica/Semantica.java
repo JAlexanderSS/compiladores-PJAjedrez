@@ -1,16 +1,13 @@
 package org.compiladores.semantica;
 
-import org.compiladores.tablero.Tablero;
-
 public class Semantica {
-    static SemanticaPeon semanticaPeon = new SemanticaPeon();
+    static SemanticaPeonBlancas semanticaPeonBlancas = new SemanticaPeonBlancas();
     // Variables globales
     static String tipoPieza = "";
-    static Boolean captura = false;
     static int tipoMovimiento = 0;
     static int cordenadax = 0;
     static int cordenaday = 0;
-
+    static String tipoJugador = "";
     // Definición valor de las columnas en números
     static String[] ey = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
@@ -27,9 +24,9 @@ public class Semantica {
         tipoMovimiento = movimiento;
     }
 
-    // Recibimos si se captura una pieza
-    public static void captura(Boolean cap) {
-        captura = cap;
+    public static void  tipoJugadorGet(String jugador){
+        tipoJugador = jugador;
+        System.out.println("Tipo Jugador: " + tipoJugador);
     }
 
     // Recibimos las coordenadas de la pieza
@@ -53,9 +50,8 @@ public class Semantica {
         System.out.println("Tipo de pieza: " + tipoPieza);
         System.out.println("Cordenada X: " + cordenadax);
         System.out.println("Cordenada Y: " + cordenaday);
-
-        if (tipoPieza.equals("Peon") && !captura) {
-            semanticaPeon.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
+        if (tipoPieza.equals("Peon")) {
+            semanticaPeonBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }

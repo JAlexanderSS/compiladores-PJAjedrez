@@ -78,7 +78,8 @@ nt = {novedad} //N: novedad teórica
 //Comentarios en el juego
 comentario = {jb}|{jm}|{jmb}|{jmm}|{ji}|{jd}|{joaj}|{lvb}|{lvn}|{vb}|{vn}|{vdb}|{vdn}|{pi}|{jcpdm}|{nt}
 //Saltos de linea y espacios
-whitespace = [\t\r ]
+space = [ ]
+whitespace = [\t\r]
 newline = \n
 
 %eofval{
@@ -160,6 +161,10 @@ return symbol(ParserSym.JAQUE, yytext());
 {comentario}  {
 return symbol(ParserSym.COMENTARIO, yytext());
 }
+
+{space} {
+          return symbol(ParserSym.ESPACIO, yytext());
+      }
 
 {whitespace}+  {/*Ignorar*/} // Ignorar espacios en blanco
 {newline}  {/*Ignorar*/} // Ignorar saltos de linea

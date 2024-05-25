@@ -1,17 +1,24 @@
 package org.compiladores.tablero;
 
-import org.compiladores.tablero.blancas.Peones;
+import org.compiladores.tablero.blancas.PeonesBlancas;
+import org.compiladores.tablero.negras.PeonesNegras;
 
 public class Tablero {
     private static Tablero instancia;
-    private final Peones[] peones;
+    private final PeonesBlancas[] peonesBlancas;
+    private final PeonesNegras[] peonesNegras;
 
     // Constructor privado para evitar la instanciación directa
     private Tablero() {
-        peones = new Peones[8];
+        peonesBlancas = new PeonesBlancas[8];
+        peonesNegras = new PeonesNegras[8];
         for (int i = 0; i < 8; i++) {
-            peones[i] = new Peones();
-            peones[i].setX(i + 1);
+            peonesBlancas[i] = new PeonesBlancas();
+            peonesBlancas[i].setX(i + 1);
+        }
+        for (int i = 0; i < 8; i++) {
+            peonesBlancas[i] = new PeonesBlancas();
+            peonesBlancas[i].setX(i + 1);
         }
     }
 
@@ -24,9 +31,17 @@ public class Tablero {
     }
 
     // Método para acceder a un peón específico por su índice
-    public Peones obtenerPeon(int indice) {
+    public PeonesBlancas obtenerPeonBlancas(int indice) {
         if (indice >= 0 && indice < 8) {
-            return peones[indice];
+            return peonesBlancas[indice];
+        } else {
+            throw new IllegalArgumentException("Índice de peón inválido");
+        }
+    }
+
+    public PeonesNegras obtenerPeonNegras(int indice) {
+        if (indice >= 0 && indice < 8) {
+            return peonesNegras[indice];
         } else {
             throw new IllegalArgumentException("Índice de peón inválido");
         }
@@ -34,8 +49,8 @@ public class Tablero {
 
     // Método para obtener el índice de un peón basado en sus coordenadas
     public int obtenerIndicePeonPorCoordenadas(int x, int y) {
-        for (int i = 0; i < peones.length; i++) {
-            if (peones[i].getX() == x && peones[i].getY() == y) {
+        for (int i = 0; i < peonesBlancas.length; i++) {
+            if (peonesBlancas[i].getX() == x && peonesBlancas[i].getY() == y) {
                 return i;
             }
         }

@@ -96,9 +96,9 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\1\1\2\2\3\1\4\1\5\1\6\2\2\1\7"+
-    "\1\10\1\11\1\12\1\13\1\4\1\1\1\14\1\15"+
-    "\2\16\1\17\1\4\5\0\1\20\2\0\1\21\1\22";
+    "\1\0\1\1\2\2\1\3\1\4\1\5\2\1\1\6"+
+    "\1\7\1\10\1\11\1\12\1\3\1\13\1\14\1\15"+
+    "\2\16\1\17\1\3\5\0\1\20\2\0\1\21\1\22";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[32];
@@ -209,7 +209,7 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\1\1\11\1\1\1\11\1\1\1\11\3\1\1\11"+
+    "\1\0\1\11\1\1\1\11\1\1\1\11\3\1\1\11"+
     "\1\1\7\11\1\1\2\11\1\1\5\0\1\1\2\0"+
     "\2\11";
 
@@ -671,57 +671,57 @@ private Symbol symbol(int type, Object value) {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { return symbol(ParserSym.PEON, yytext());
+            { throw new Error("Caracter no valido: " + yytext());
             }
           // fall through
           case 19: break;
           case 2:
-            { throw new Error("Caracter no valido: " + yytext());
+            { /*Ignorar*/
             }
           // fall through
           case 20: break;
           case 3:
-            { /*Ignorar*/
+            { return symbol(ParserSym.COMENTARIO, yytext());
             }
           // fall through
           case 21: break;
           case 4:
-            { return symbol(ParserSym.COMENTARIO, yytext());
+            { return symbol(ParserSym.JAQUEMATE, yytext());
             }
           // fall through
           case 22: break;
           case 5:
-            { return symbol(ParserSym.JAQUEMATE, yytext());
+            { return symbol(ParserSym.JAQUE, yytext());
             }
           // fall through
           case 23: break;
           case 6:
-            { return symbol(ParserSym.JAQUE, yytext());
+            { return symbol(ParserSym.FILA, yytext());
             }
           // fall through
           case 24: break;
           case 7:
-            { return symbol(ParserSym.FILA, yytext());
+            { return symbol(ParserSym.PROMOCION, yytext());
             }
           // fall through
           case 25: break;
           case 8:
-            { return symbol(ParserSym.PROMOCION, yytext());
+            { return symbol(ParserSym.ALFIL, yytext());
             }
           // fall through
           case 26: break;
           case 9:
-            { return symbol(ParserSym.ALFIL, yytext());
+            { return symbol(ParserSym.CABALLO, yytext());
             }
           // fall through
           case 27: break;
           case 10:
-            { return symbol(ParserSym.CABALLO, yytext());
+            { return symbol(ParserSym.DAMA, yytext());
             }
           // fall through
           case 28: break;
           case 11:
-            { return symbol(ParserSym.DAMA, yytext());
+            { return symbol(ParserSym.PEON, yytext());
             }
           // fall through
           case 29: break;
