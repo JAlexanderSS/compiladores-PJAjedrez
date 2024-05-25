@@ -58,6 +58,28 @@ function App() {
     return true;
   }
 
+    // Fetch game data from API and load moves
+    /*useEffect(() => {
+      async function fetchGameData() {
+        try {
+          const response = await fetch('https://mocki.io/v1/a58b10c9-b558-40f2-ab93-3764d1725e4e');
+          const data = await response.json();
+          console.log("Game data:", data);
+          
+          safeGameMutate((game) => {
+            data.forEach(move => {
+              const [from, to] = move.split(' ');
+              game.move({ from, to });
+            });
+          });
+        } catch (error) {
+          console.error("Error fetching game data:", error);
+        }
+      }
+      
+      fetchGameData();
+    }, []);*/
+
   // Reset the game
   function restartGame() {
     setGame(new Chess());
