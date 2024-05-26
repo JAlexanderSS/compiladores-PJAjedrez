@@ -46,11 +46,11 @@ public class SemanticaPeonBlancas {
     }
 
     // Método para validar un movimiento
-    public void validacionDeMovimiento(int x, int y, int tipoMovimiento) {
+    public void validacionDeMovimiento(int x, int y, int tipoMovimiento, int origenX) {
         if (tipoMovimiento == 0){
             movimientoSimple(x, y, tipoMovimiento);
         } else if (tipoMovimiento == 1){
-            movimientoDeCaptura(x, y, tipoMovimiento);
+            movimientoDeCaptura(x, y, tipoMovimiento, origenX);
         }
     }
 
@@ -69,11 +69,12 @@ public class SemanticaPeonBlancas {
         System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
     }
 
-    public void movimientoDeCaptura(int x, int y, int tipoMovimiento) {
+    public void movimientoDeCaptura(int x, int y, int tipoMovimiento, int origenX) {
         for (int i = 0; i < peonesList.length; i++) {
             for (int[] coordenadas : peonesList[i]) {
-                if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento) {
-                    System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura.");
+                PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
+                if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento && peon.getX() == origenX) {
+                    System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " Que parte de la casilla " + peon.getX()+ " , " + peon.getY() +  " y se realizará una captura.");
                     gestorPeonesBlancas.moverPeon(i, x, y);
                     reseteoYGeneracion(i);
                     return;
@@ -154,7 +155,7 @@ public class SemanticaPeonBlancas {
 
     public void capturas_AlPasoIzquierda(int indice) {
         PeonesBlancas peon = tablero.obtenerPeonBlancas(indice);
-        int newY = peon.getY() + -1;
+        int newY = peon.getY() + 1;
         int newX = 5;
         if (newY >= 1) {
             peonesList[indice].add(new int[]{newX, newY, 2});

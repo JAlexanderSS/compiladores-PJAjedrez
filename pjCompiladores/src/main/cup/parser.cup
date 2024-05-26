@@ -17,15 +17,15 @@ non terminal movimientoN;
 start with entrada;
 
 entrada ::=
-    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba(); Semantica.valoresObtenidos();  :}
+    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba();:}
     ;
 
 movimientoB ::=
-    movimientofinal {: Semantica.tipoJugadorGet("Blancas");:}
+    movimientofinal {: Semantica.tipoJugadorGet("Blancas");Semantica.valoresObtenidos();:}
     ;
 
 movimientoN ::=
-    movimientofinal {: Semantica.tipoJugadorGet("Negras");:}
+    movimientofinal {: Semantica.tipoJugadorGet("Negras");Semantica.valoresObtenidos();:}
     ;
 
 movimientofinal ::=
@@ -82,7 +82,7 @@ captura ::=
     ;
 
 cdp ::=
-    COLUMNA CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(1);:}
+    COLUMNA:precedenciaX CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(1); Semantica.calculoPrecedenciaX((String) precedenciaX);:}
     ;
 
 cdpap ::=

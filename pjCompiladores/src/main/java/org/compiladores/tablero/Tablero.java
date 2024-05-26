@@ -17,8 +17,8 @@ public class Tablero {
             peonesBlancas[i].setX(i + 1);
         }
         for (int i = 0; i < 8; i++) {
-            peonesBlancas[i] = new PeonesBlancas();
-            peonesBlancas[i].setX(i + 1);
+            peonesNegras[i] = new PeonesNegras();
+            peonesNegras[i].setX(8-i);
         }
     }
 

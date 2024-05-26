@@ -220,7 +220,7 @@ class CUP$Parser$actions {
           case 1: // entrada ::= movimientoB ESPACIO movimientoN 
             {
               Object RESULT =null;
-		 RESULT = Semantica.prueba(); Semantica.valoresObtenidos();  
+		 RESULT = Semantica.prueba();
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("entrada",13, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -229,7 +229,7 @@ class CUP$Parser$actions {
           case 2: // movimientoB ::= movimientofinal 
             {
               Object RESULT =null;
-		 Semantica.tipoJugadorGet("Blancas");
+		 Semantica.tipoJugadorGet("Blancas");Semantica.valoresObtenidos();
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("movimientoB",18, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -238,7 +238,7 @@ class CUP$Parser$actions {
           case 3: // movimientoN ::= movimientofinal 
             {
               Object RESULT =null;
-		 Semantica.tipoJugadorGet("Negras");
+		 Semantica.tipoJugadorGet("Negras");Semantica.valoresObtenidos();
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("movimientoN",19, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -487,7 +487,10 @@ class CUP$Parser$actions {
           case 30: // cdp ::= COLUMNA CAPTURA desplazamientopeon 
             {
               Object RESULT =null;
-		 Semantica.tipoMovimiento(1);
+		int precedenciaXleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
+		int precedenciaXright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).right;
+		Object precedenciaX = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		 Semantica.tipoMovimiento(1); Semantica.calculoPrecedenciaX((String) precedenciaX);
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("cdp",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
