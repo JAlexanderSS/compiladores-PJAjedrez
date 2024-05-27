@@ -4,7 +4,7 @@ import java_cup.runtime.*;
 
 class Parser;
 
-terminal FILA, COLUMNA, REY, DAMA, ALFIL, CABALLO, TORRE, PEON, CAPTURA, PROMOCION, CAP, ENROQUELARGO, ENROQUECORTO, JAQUEMATE, JAQUE, COMENTARIO, ESPACIO;
+terminal FILA, COLUMNA, REY, DAMA, ALFIL, CABALLO, TORRE, PEON, CAPTURA, PROMOCION, CAP, ENROQUELARGO, ENROQUECORTO, JAQUEMATE, JAQUE, COMENTARIO, ESPACIO, TAB;
 
 non terminal captura, cdp, cdpap, pdp, dpc, dpf, dpa, cca, movimiento, jque, jquemate, movimientofinal, comentario, entrada;
 non terminal desplazamiento;
@@ -13,13 +13,17 @@ non terminal casilla;
 non terminal desplazamientopeon;
 non terminal movimientoB;
 non terminal movimientoN;
+non terminal jugada;
 
 start with entrada;
 
 entrada ::=
-    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba();:}
+    jugada TAB entrada|jugada
     ;
 
+jugada ::=
+    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba();:}
+ ;
 movimientoB ::=
     movimientofinal {: Semantica.tipoJugadorGet("Blancas");Semantica.valoresObtenidos();:}
     ;

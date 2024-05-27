@@ -1,6 +1,7 @@
 package org.compiladores.semantica;
 
 import org.compiladores.tablero.Tablero;
+import org.compiladores.tablero.negras.PeonesNegras;
 import org.compiladores.tablero.blancas.GestorPeonesBlancas;
 import org.compiladores.tablero.blancas.PeonesBlancas;
 
@@ -74,6 +75,7 @@ public class SemanticaPeonBlancas {
             for (int[] coordenadas : peonesList[i]) {
                 PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
                 if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento && peon.getX() == origenX) {
+                    verificacionDeCapturaSimple(x, y);
                     System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " Que parte de la casilla " + peon.getX()+ " , " + peon.getY() +  " y se realizará una captura.");
                     gestorPeonesBlancas.moverPeon(i, x, y);
                     reseteoYGeneracion(i);
@@ -82,6 +84,18 @@ public class SemanticaPeonBlancas {
             }
         }
         System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
+    }
+
+    public void verificacionDeCapturaSimple(int capturaX, int capturaY){
+        for (int i = 0; i < 8; i++){
+            PeonesNegras peon = tablero.obtenerPeonNegras(i);
+            if (peon.getX() == capturaX && peon.getY() == capturaY && peon.isEstado()){
+                System.out.println("Se ha realizado una captura simple.");
+                return;
+            } else {
+                System.out.println("No hay ninguna pieza en esta casilla.");
+            }
+        }
     }
 
     public void movimientoDeCapturaAlPaso(int x, int y, int tipoMovimiento) {

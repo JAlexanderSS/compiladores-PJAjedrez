@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.compiladores.ParaserTest" time="0.157" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="20"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores\target\test-classes;C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores\target\classes;C:\Users\josea\.m2\repository\com\github\vbmacher\java-cup-runtime\11b-20160615-3\java-cup-runtime-11b-20160615-3.jar;C:\Users\josea\.m2\repository\info\picocli\picocli\4.6.3\picocli-4.6.3.jar;C:\Users\josea\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\11.2.3.jre17\mssql-jdbc-11.2.3.jre17.jar;C:\Users\josea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\josea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\josea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\josea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\josea\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Guatemala"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GT"/>
+    <property name="sun.boot.library.path" value="C:\Users\josea\.jdks\openjdk-20.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\josea\AppData\Local\Temp\surefire17722218737314406283\surefirebooter-20240526100919034_3.jar C:\Users\josea\AppData\Local\Temp\surefire17722218737314406283 2024-05-26T10-09-17_442-jvmRun1 surefire-20240526100919034_1tmp surefire_0-20240526100919034_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores\target\test-classes;C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores\target\classes;C:\Users\josea\.m2\repository\com\github\vbmacher\java-cup-runtime\11b-20160615-3\java-cup-runtime-11b-20160615-3.jar;C:\Users\josea\.m2\repository\info\picocli\picocli\4.6.3\picocli-4.6.3.jar;C:\Users\josea\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\11.2.3.jre17\mssql-jdbc-11.2.3.jre17.jar;C:\Users\josea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\josea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\josea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\josea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\josea\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\josea"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Users\josea\.jdks\openjdk-20.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\josea\AppData\Local\Temp\surefire17722218737314406283\surefirebooter-20240526100919034_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="20.0.2+9-78"/>
+    <property name="user.name" value="josea"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\josea\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\josea\AppData\Local\Temp\"/>
+    <property name="java.version" value="20.0.2"/>
+    <property name="user.dir" value="C:\Users\josea\universidad\septimo\compiladores\compiladores-PJAjedrez\pjCompiladores"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\josea\.jdks\openjdk-20.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Java\maven\bin;C:\Users\josea\.jdks\openjdk-20.0.2\bin;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Git\cmd;C:\Users\josea\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\josea\AppData\Local\Programs\Python\Python311\;C:\Users\josea\AppData\Local\Microsoft\WindowsApps;C:\Users\josea\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\josea\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;C:\Users\josea\AppData\Local\Programs\Azure Data Studio\bin;%NVM_HOME%;%NVM_SYMLINK%;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="20.0.2+9-78"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="64.0"/>
+  </properties>
+  <testcase name="parserAnalysis" classname="org.compiladores.ParaserTest" time="0.111">
+    <system-out><![CDATA[Tipo Jugador: Blancas
+Tipo de pieza: Peon
+Cordenada X: 4
+Cordenada Y: 3
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+Las coordenadas (4, 3) coinciden con el peón en el índice 2 Que parte de la casilla 3 , 2 y se realizará una captura.
+Tipo Jugador: Negras
+Tipo de pieza: Peon
+Cordenada X: 6
+Cordenada Y: 6
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+No hay ninguna pieza en esta casilla.
+Las coordenadas (6, 6) coinciden con el peón en el índice 3 Que parte de la casilla 5 , 7 y se realizará una captura.
+]]></system-out>
+  </testcase>
+</testsuite>

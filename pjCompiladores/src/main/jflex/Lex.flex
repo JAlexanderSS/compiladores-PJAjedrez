@@ -81,6 +81,7 @@ comentario = {jb}|{jm}|{jmb}|{jmm}|{ji}|{jd}|{joaj}|{lvb}|{lvn}|{vb}|{vn}|{vdb}|
 space = [ ]
 whitespace = [\t\r]
 newline = \n
+tab = ">"
 
 %eofval{
   return symbol(ParserSym.EOF);
@@ -166,6 +167,11 @@ return symbol(ParserSym.COMENTARIO, yytext());
           return symbol(ParserSym.ESPACIO, yytext());
       }
 
-{whitespace}+  {/*Ignorar*/} // Ignorar espacios en blanco
+{tab} {
+           return symbol(ParserSym.TAB, yytext());
+      }
+
+{whitespace}+  {
+      } // Ignorar espacios en blanco
 {newline}  {/*Ignorar*/} // Ignorar saltos de linea
 [^] { throw new Error("Caracter no valido: " + yytext()); }

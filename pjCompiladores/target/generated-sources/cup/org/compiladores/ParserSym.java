@@ -9,6 +9,7 @@ package org.compiladores;
 public interface ParserSym {
   /* terminals */
   public static final int COLUMNA = 3;
+  public static final int TAB = 19;
   public static final int FILA = 2;
   public static final int PEON = 9;
   public static final int CAPTURA = 10;
@@ -46,7 +47,8 @@ public interface ParserSym {
   "JAQUEMATE",
   "JAQUE",
   "COMENTARIO",
-  "ESPACIO"
+  "ESPACIO",
+  "TAB"
   };
 }
 
