@@ -4,11 +4,60 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
+import axios from 'axios';
 
 function App() {
   const [game, setGame] = useState(new Chess());
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [file, setFile] = useState(null);
+  const [message, setMessage] = useState('');
+  const [data, setData] = useState([]);
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+    console.log('File:', e.target.files[0]);
+  };
+
+  const handleFileUpload = async () => {
+    if (!file) {
+      setMessage('Please select a file first');
+      return;
+    }
+
+    const formData = new FormData();
+    console.log('formDataFILE:', file);
+    formData.append('file', file);
+    console.log('formData:', formData.append('file', file));
+
+    try {
+      const response = await axios.post('http://localhost:8080/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log('Responses:', response.data);
+      setData(response.data);
+      if (Array.isArray(data)) {
+        for (let i = 0; i < data.length; i++) {
+          const [from, to] = data[i].split(' ');
+          console.log('Move:', from, to);
+          await new Promise(resolve => setTimeout(() => {
+            safeGameMutate((game) => {
+              game.move({ from, to });
+            });
+            resolve();
+          }, 1000)); // 1000ms delay between moves
+        }
+      } else {
+        console.error("Expected an array of moves, but received:", data);
+      }
+      setMessage('File uploaded successfully: ');
+    } catch (error) {
+      setMessage('Error uploading file: ' + error.message);
+    }
+  };
+
 
   // Let's perform a function on the game state
   function safeGameMutate(modify) {
@@ -58,7 +107,7 @@ function App() {
     // illegal move
     if (move === null) return false;
     // valid move
-   // setTimeout(makeRandomMove, 200);
+    // setTimeout(makeRandomMove, 200);
     return true;
   }
 
@@ -67,12 +116,17 @@ function App() {
     async function fetchGameData() {
       try {
         const response = await fetch('https://mocki.io/v1/ecea211d-5f51-41b2-8b38-f252a71b7c4d');
-        const data = await response.json();
+        const datas = await response.json();
+        const datass = [
+          "e2 e4",
+          "b8 c6"
+        ];
         console.log('Fetched data:', data);
 
         if (Array.isArray(data)) {
           for (let i = 0; i < data.length; i++) {
             const [from, to] = data[i].split(' ');
+            console.log('Move:', from, to);
             await new Promise(resolve => setTimeout(() => {
               safeGameMutate((game) => {
                 game.move({ from, to });
@@ -90,14 +144,13 @@ function App() {
 
     fetchGameData();
   }, []);
-  
+
   /*useEffect(() => {
     const shepherdsMateMoves = [
-      "e2 e4",
-      "f7 f6",
-      "d1 h5",
-      "g7 g6",
-      "h5 e5"
+      "e4 e5",
+      "Ac4 Cc6",
+      "Dh5 Ac5",
+      "Dxf7++"
     ];
   
     async function playMovesWithDelay(moves, delay) {
@@ -114,7 +167,7 @@ function App() {
   
     playMovesWithDelay(shepherdsMateMoves, 1000); // 1000ms delay between moves
   }, []);*/
-  
+
 
   // Reset the game
   function restartGame() {
@@ -143,6 +196,9 @@ function App() {
       <div className="header">
         <div className="game-info">
           <h1>Chess Game</h1>
+          <input type="file" onChange={handleFileChange} />
+            <button onClick={handleFileUpload}>Upload</button>
+            <p>{message}</p>
         </div>
       </div>
       <div className="chessboard-container">
