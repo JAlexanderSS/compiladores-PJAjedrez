@@ -18,11 +18,14 @@ non terminal jugada;
 start with entrada;
 
 entrada ::=
-    jugada TAB entrada|jugada
+    jugada TAB entrada
+    | jugada
+    | jquemate comentario {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
+    | movimientoB TAB comentario {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
     ;
 
 jugada ::=
-    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba();:}
+    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
  ;
 movimientoB ::=
     movimientofinal {: Semantica.tipoJugadorGet("Blancas");Semantica.valoresObtenidos();:}
@@ -35,7 +38,6 @@ movimientoN ::=
 movimientofinal ::=
     movimiento comentario
     | jque comentario
-    | jquemate comentario
     ;
 
 movimiento ::=
@@ -82,11 +84,11 @@ desplazamientopeon ::=
     ;
 
 captura ::=
-    pieza CAPTURA casilla {: Semantica.tipoMovimiento(1);:}
+    pieza CAPTURA casilla {: Semantica.tipoMovimiento(2);:}
     ;
 
 cdp ::=
-    COLUMNA:precedenciaX CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(1); Semantica.calculoPrecedenciaX((String) precedenciaX);:}
+    COLUMNA:precedenciaX CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(2); Semantica.calculoPrecedenciaX((String) precedenciaX);:}
     ;
 
 cdpap ::=

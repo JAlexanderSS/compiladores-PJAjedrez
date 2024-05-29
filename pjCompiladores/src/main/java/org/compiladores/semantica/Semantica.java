@@ -10,6 +10,7 @@ public class Semantica {
     static int cordenaday = 0;
     static int origenX = 0;
     static String tipoJugador = "";
+    static int movimientos = 0;
     // Definición valor de las columnas en números
     static String[] ey = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
@@ -35,6 +36,12 @@ public class Semantica {
     public static void casilla(String columna, String fila) {
         posiccionX(columna);
         cordenaday = Integer.parseInt(fila);
+    }
+
+    public static void contadorJugadas(){
+        movimientos += 1;
+        System.out.println("Movimientos: " + movimientos);
+        System.out.println("--------------------------------------------------------------");
     }
 
     // Función para obtener la posición en Y de la pieza
