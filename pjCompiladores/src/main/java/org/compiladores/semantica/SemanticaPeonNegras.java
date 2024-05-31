@@ -1,7 +1,6 @@
 package org.compiladores.semantica;
 
 import org.compiladores.tablero.Tablero;
-import org.compiladores.tablero.blancas.GestorPeonesBlancas;
 import org.compiladores.tablero.blancas.PeonesBlancas;
 import org.compiladores.tablero.negras.PeonesNegras;
 import org.compiladores.tablero.negras.GestorPeonesNegras;
@@ -9,13 +8,17 @@ import org.compiladores.tablero.negras.GestorPeonesNegras;
 import java.util.ArrayList;
 
 public class SemanticaPeonNegras {
+
+    // Singleton instance
+    private static SemanticaPeonNegras instance = null;
+
     GestorPeonesNegras gestorPeonesNegras = new GestorPeonesNegras();
-    GestorPeonesBlancas gestorPeonesBlancas = new GestorPeonesBlancas();
     Tablero tablero = Tablero.obtenerInstancia();
 
     Boolean concidenciaNegras = false;
     Boolean concidenciaBlancas = false;
     Boolean captura = false;
+    Boolean capturaAlPaso = false;
 
     // Crear un arreglo de ArrayLists para almacenar pares de enteros (x, y) de los 8 peones
     private static ArrayList<int[]>[] peonesList = new ArrayList[8];
@@ -27,10 +30,17 @@ public class SemanticaPeonNegras {
         }
     }
 
-    // Constructor
-    public SemanticaPeonNegras() {
-        // El arreglo de ArrayLists ya está inicializado estáticamente
+    // Constructor privado para el patrón Singleton
+    private SemanticaPeonNegras() {
         inicializarMovimientosSimples();
+    }
+
+    // Método para obtener la instancia única de la clase
+    public static SemanticaPeonNegras obtenerInstancia() {
+        if (instance == null) {
+            instance = new SemanticaPeonNegras();
+        }
+        return instance;
     }
 
     // Método para inicializar movimientos simples de los peones
@@ -45,15 +55,30 @@ public class SemanticaPeonNegras {
 
     // Método para validar un movimiento
     public void validacionDeMovimiento(int x, int y, int tipoMovimiento, int origenX) {
-        if (tipoMovimiento == 0){
-            movimientoSimple(x, y);
-        } else if (tipoMovimiento == 1){
-            movimientoDeCaptura(x, y, origenX);
+        if (capturaAlPaso){
+            if(verificacionDeCapturaAlPaso(x, y)){
+                System.out.println("Se realizará una captura al paso");
+            }else if (tipoMovimiento == 0){
+                movimientoSimple(x, y);
+            } else if (tipoMovimiento == 2){
+                movimientoDeCaptura(x, y, origenX);
+            } else if(tipoMovimiento == 4){
+                promocion(y);
+            }
+        }else{
+            if (tipoMovimiento == 0){
+                movimientoSimple(x, y);
+            } else if (tipoMovimiento == 2){
+                movimientoDeCaptura(x, y, origenX);
+            }else if(tipoMovimiento == 4){
+                promocion(y);
+            }
         }
     }
 
     // Método para revisar si las coordenadas destino cooinciden con algun peon
     public void movimientoSimple(int x, int y) {
+        SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
         for (int i = 0; i < peonesList.length; i++) {
             for (int[] coordenadas : peonesList[i]) {
                 if (coordenadas[0] == x && coordenadas[1] == y) {
@@ -65,10 +90,10 @@ public class SemanticaPeonNegras {
                     }else if (coordenadas[2] == 1 && coordenadas[3] == 0){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará un movimienot doble");
                         gestorPeonesNegras.moverPeon(i, x, y);
+                        semanticaPeonBlancas.Capturas_AlPaso(i, x);
                         reseteoYGeneracionGeneral();
                         return;
-                    }
-                    else if (coordenadas[3] == 1){
+                    } else if (coordenadas[3] == 1){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con una pieza aliada, no se puede realizar el desplazamiento");
                         return;
                     } else if (coordenadas[3] == 2){
@@ -87,46 +112,24 @@ public class SemanticaPeonNegras {
                 PeonesNegras peon = tablero.obtenerPeonNegras(i);
                 if (coordenadas[0] == x && coordenadas[1] == y && peon.getX() == origenX) {
                     if (verificacionDeCapturaSimple(x, y)){
-                        int indiceBlancas = tablero.obtenerIndicePeonPorCoordenadas(x, y);
+                        int indiceBlancas = tablero.obtenerIndicePeonPorCoordenadasBlancas(x, y);
                         PeonesBlancas peonBlanco = tablero.obtenerPeonBlancas(indiceBlancas);
                         peonBlanco.setEstado(false);
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " Que parte de la casilla " + peon.getX()+ " , " + peon.getY() + " y se realizará una captura.");
                         gestorPeonesNegras.moverPeon(i, x, y);
                         reseteoYGeneracionGeneral();
-                        return;
                     } else {
                         System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
-                        return;
                     }
+                    return;
                 }
             }
         }
         System.out.println("El movimiento no es válido.");
     }
 
-    public void movimientoDeCapturaAlPaso(int x, int y, int tipoMovimiento) {
-        for (int i = 0; i < peonesList.length; i++) {
-            for (int[] coordenadas : peonesList[i]) {
-                if (coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == tipoMovimiento) {
-                    PeonesNegras peon = tablero.obtenerPeonNegras(0);
-                    if (peon.getY() == 4){
-                        System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura al paso.");
-                        gestorPeonesBlancas.moverPeon(i, x, y);
-                        gestorPeonesNegras.moverPeon(i, x, y);
-                        reseteoYGeneracionGeneral();
-                        return;
-                    }
-                    System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura.");
-                    gestorPeonesNegras.moverPeon(i, x, y);
-                    reseteoYGeneracionGeneral();
-                    return;
-                }
-            }
-        }
-        System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
-    }
-
     public void reseteoYGeneracionGeneral(){
+        capturaAlPaso = false;
         for (int i = 0; i < 8; i++){
             reseteoYGeneracion(i);
         }
@@ -139,10 +142,6 @@ public class SemanticaPeonNegras {
             movimientos_Simples(indice);
             movimientos_DeCapturaDerecha(indice);
             movimientos_DeCapturaIzquierda(indice);
-            if (peon.getY() == 4){
-                capturas_AlPasoDerecha(indice);
-                capturas_AlPasoIzquierda(indice);
-            }
             if(!peon.isJugado()){
                 movimientos_dobles(indice);
             }
@@ -218,23 +217,68 @@ public class SemanticaPeonNegras {
         }
     }
 
-    public void capturas_AlPasoDerecha(int indice) {
-        PeonesNegras peon = tablero.obtenerPeonNegras(indice);
-        int newY = peon.getY() - 1;
-        int newX = 4;
-        if (newY <= 8) {
-            asignacionDeErrores(indice, peon, newX, newY, 3);
+    public Boolean verificacionDeCapturaAlPaso(int x, int y) {
+        boolean realizado = false;
+        for (int i = 0; i < peonesList.length; i++) {
+            for (int[] coordenadas : peonesList[i]) {
+                if (capturaAlPaso && coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == 3) {
+                    PeonesBlancas peonBlancas = tablero.obtenerPeonBlancas(coordenadas[4]);
+                    System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura al paso.");
+                    gestorPeonesNegras.moverPeon(i, x, y);
+                    peonBlancas.setEstado(false);
+                    reseteoYGeneracionGeneral();
+                    realizado = true;
+                    return realizado;
+                }
+            }
+        }
+        return realizado;
+    }
+
+    public void Capturas_AlPaso(int indicePeonBlanco, int xBlanco){
+        for (int i = 0; i < 8; i++){
+            PeonesNegras peon = tablero.obtenerPeonNegras(i);
+            if (peon.getX() + 1 == xBlanco && peon.getY() == 4){
+                capturas_AlPasoIzquierda(i, indicePeonBlanco);
+            } else if (peon.getX() - 1 == xBlanco && peon.getY() == 4){
+                capturas_AlPasoDerecha(i, indicePeonBlanco);
+            }
         }
     }
 
-    public void capturas_AlPasoIzquierda(int indice) {
+    public void capturas_AlPasoDerecha(int indice, int indicePeon) {
         PeonesNegras peon = tablero.obtenerPeonNegras(indice);
-        int newY = peon.getY() + 1;
-        int newX = 4;
-        if (newY >= 1) {
-            asignacionDeErrores(indice, peon, newX, newY, 3);
+        int newX = peon.getX() - 1;
+        int newY = peon.getY() - 1;
+        asignacionDeErroresAlPaso(indice, newX, newY, indicePeon);
+        capturaAlPaso = true;
+    }
+
+    public void capturas_AlPasoIzquierda(int indice, int indicePeon) {
+        PeonesNegras peon = tablero.obtenerPeonNegras(indice);
+        int newX = peon.getX() + 1;
+        int newY = peon.getY() - 1;
+        asignacionDeErroresAlPaso(indice, newX, newY, indicePeon);
+        capturaAlPaso = true;
+    }
+
+    private void asignacionDeErroresAlPaso(int indice, int newX, int newY, int indicePeonBlanco) {
+        if(verificarCoincidenciaNegras(newX, newY)){
+            peonesList[indice].add(new int[]{newX, newY, 3, 1, indicePeonBlanco});
+        }else if(verificarCoincidenciaBlancas(newX, newY)){
+            peonesList[indice].add(new int[]{newX, newY, 3, 2, indicePeonBlanco});
+        } else {
+            peonesList[indice].add(new int[]{newX, newY, 3, 0, indicePeonBlanco});
         }
     }
+
+    private void promocion(int y){
+        if (y == 1){
+            System.out.println("Promocion");
+        } else {
+            System.out.println("No se puede realizar la promocion");
+        }
+    };
 
     // Método para resetear las coordenadas de un peón específico
     public void resetearCoordenadasPeon(int indice) {

@@ -96,7 +96,9 @@ cdpap ::=
     ;
 
 pdp ::=
-    desplazamiento PROMOCION pieza
+    desplazamiento PROMOCION pieza {: Semantica.tipoMovimiento(4);:}
+    |
+    COLUMNA CAPTURA casilla PROMOCION pieza {: Semantica.tipoMovimiento(4);:}
     ;
 
 cca ::=

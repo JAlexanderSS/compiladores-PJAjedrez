@@ -23,7 +23,7 @@ public class GestorPeonesNegras {
 
     public void mostrarIndicePeonPorCoordenadas(int x, int y) {
         Tablero tablero = Tablero.obtenerInstancia();
-        int indice = tablero.obtenerIndicePeonPorCoordenadas(x, y);
+        int indice = tablero.obtenerIndicePeonPorCoordenadasNegras(x, y);
         if (indice != -1) {
             System.out.println("El índice del peón en las coordenadas (" + x + ", " + y + ") es: " + indice);
         } else {

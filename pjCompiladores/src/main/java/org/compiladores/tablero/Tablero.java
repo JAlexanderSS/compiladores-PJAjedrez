@@ -48,9 +48,18 @@ public class Tablero {
     }
 
     // Método para obtener el índice de un peón basado en sus coordenadas
-    public int obtenerIndicePeonPorCoordenadas(int x, int y) {
+    public int obtenerIndicePeonPorCoordenadasBlancas(int x, int y) {
         for (int i = 0; i < peonesBlancas.length; i++) {
             if (peonesBlancas[i].getX() == x && peonesBlancas[i].getY() == y) {
+                return i;
+            }
+        }
+        return -1; // Indica que no se encontró ningún peón con esas coordenadas
+    }
+
+    public int obtenerIndicePeonPorCoordenadasNegras(int x, int y) {
+        for (int i = 0; i < peonesNegras.length; i++) {
+            if (peonesNegras[i].getX() == x && peonesNegras[i].getY() == y) {
                 return i;
             }
         }

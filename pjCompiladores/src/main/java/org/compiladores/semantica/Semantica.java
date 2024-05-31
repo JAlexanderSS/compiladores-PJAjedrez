@@ -1,8 +1,8 @@
 package org.compiladores.semantica;
 
 public class Semantica {
-    static SemanticaPeonBlancas semanticaPeonBlancas = new SemanticaPeonBlancas();
-    static SemanticaPeonNegras semantaicaPeonNegras = new SemanticaPeonNegras();
+    static SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
+    static SemanticaPeonNegras semantaicaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
     // Variables globales
     static String tipoPieza = "";
     static int tipoMovimiento = 0;
@@ -11,6 +11,7 @@ public class Semantica {
     static int origenX = 0;
     static String tipoJugador = "";
     static int movimientos = 0;
+    static Boolean capturaAlPaso = false;
     // Definición valor de las columnas en números
     static String[] ey = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
@@ -30,6 +31,10 @@ public class Semantica {
     public static void  tipoJugadorGet(String jugador){
         tipoJugador = jugador;
         System.out.println("Tipo Jugador: " + tipoJugador);
+    }
+
+    public static void capturaAlPaso(Boolean captura){
+        capturaAlPaso = captura;
     }
 
     // Recibimos las coordenadas de la pieza
