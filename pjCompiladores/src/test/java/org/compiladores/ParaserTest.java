@@ -7,7 +7,7 @@ import java.io.StringReader;
 public class ParaserTest {
     @Test
     public void parserAnalysis() throws Exception {
-        String expresion = "Ch3 g5>b4 Cc6>Cxg5 Cxb4";
+        String expresion = "Ch3 g5>b4 Cc6>Cxg5 Cxb4ffs";
         IDLexer lexer = new IDLexer(new StringReader(expresion));
         Parser p = new Parser(lexer);
         String resultado = (String) p.parse().value;

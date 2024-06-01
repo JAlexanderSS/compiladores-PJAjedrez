@@ -159,9 +159,9 @@ public class SemanticaCaballosNegras {
 
     private void asignacionDeErrores(int indice, int newX, int newY) {
         if (verificarCoincidenciaNegras(newX, newY)) {
-            caballosList[indice].add(new int[]{newX, newY, 1});
-        } else if (verificarCoincidenciaBlancas(newX, newY)) {
             caballosList[indice].add(new int[]{newX, newY, 2});
+        } else if (verificarCoincidenciaBlancas(newX, newY)) {
+            caballosList[indice].add(new int[]{newX, newY, 1});
         } else {
             caballosList[indice].add(new int[]{newX, newY, 0});
         }
@@ -185,16 +185,19 @@ public class SemanticaCaballosNegras {
                         gestorCaballosNegras.moverCaballo(i, x, y);
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     } else if (datosCaballos[2] == 1) {
                         System.out.println("Existe una pieza enemiga en la casilla seleccionada");
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     } else if (datosCaballos[2] == 2) {
                         System.out.println("Movimiento inválido, existe una pieza aliada en la casilla seleccionada para desplazar el caballo");
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     }
                 }
@@ -211,20 +214,23 @@ public class SemanticaCaballosNegras {
             for (int[] datosCaballos : caballosList[i]) {
                 if (datosCaballos[0] == x && datosCaballos[1] == y) {
                     if (datosCaballos[2] == 0) {
-                        System.out.println("Movimiento válido");
+                        System.out.println("Movimiento no correspondiente a la notacion");
                         gestorCaballosNegras.moverCaballo(i, x, y);
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     } else if (datosCaballos[2] == 1) {
                         System.out.println("Movimiento valido para la captura");
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     } else if (datosCaballos[2] == 2) {
                         System.out.println("Movimiento inválido, existe una pieza aliada en la casilla seleccionada para desplazar el caballo");
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
+                        reseteoDePiezas();
                         return;
                     }
                 }
@@ -233,6 +239,15 @@ public class SemanticaCaballosNegras {
         if (!movimientoValido) {
             System.out.println("Movimiento inválido");
         }
+    }
+
+    public void reseteoDePiezas(){
+        SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
+        SemanticaPeonNegras semanticaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
+        SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
+        semanticaCaballoBlancas.reseteoYGeneracionGeneral();
+        semanticaPeonNegras.reseteoYGeneracionGeneral();
+        semanticaPeonBlancas.reseteoYGeneracionGeneral();
     }
 
     public void reseteoYGeneracionGeneral(){

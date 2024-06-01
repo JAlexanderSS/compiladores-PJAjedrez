@@ -36,7 +36,7 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
-    "\1\0\41\u0100\1\u0200\u10dd\u0100";
+    "\1\0\37\u0100\1\u0200\1\u0100\1\u0300\265\u0100\10\u0400\u1020\u0100";
 
   private static int [] zzUnpackcmap_top() {
     int [] result = new int[4352];
@@ -64,15 +64,16 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\1\1\1\2\2\0\1\1\22\0\1\3\1\4"+
-    "\1\0\1\5\7\0\1\6\1\0\1\7\1\10\1\11"+
-    "\1\12\10\13\4\0\1\14\1\15\1\4\1\0\1\16"+
-    "\1\0\1\17\1\20\11\0\1\21\1\0\1\22\1\0"+
-    "\1\23\1\0\1\24\14\0\1\25\7\26\7\0\1\27"+
-    "\7\0\1\30\u01a5\0\1\31\341\0";
+    "\11\0\1\1\1\2\2\3\1\1\22\0\1\4\1\5"+
+    "\1\0\1\6\7\0\1\7\1\0\1\10\1\11\1\12"+
+    "\1\13\10\14\4\0\1\15\1\16\1\5\1\0\1\17"+
+    "\1\0\1\20\1\21\11\0\1\22\1\0\1\23\1\0"+
+    "\1\24\1\0\1\25\14\0\1\26\7\27\7\0\1\30"+
+    "\7\0\1\31\14\0\1\3\u01a2\0\2\3\364\0\1\32"+
+    "\341\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
-    int [] result = new int[768];
+    int [] result = new int[1280];
     int offset = 0;
     offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);
     return result;
@@ -127,11 +128,11 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\32\0\64\0\32\0\32\0\116\0\32\0\150"+
-    "\0\202\0\234\0\32\0\266\0\32\0\32\0\32\0\32"+
-    "\0\32\0\32\0\32\0\32\0\320\0\32\0\32\0\352"+
-    "\0\u0104\0\u011e\0\u0138\0\u0152\0\u016c\0\u0186\0\u01a0\0\u01ba"+
-    "\0\32\0\32";
+    "\0\0\0\33\0\66\0\33\0\33\0\121\0\33\0\154"+
+    "\0\207\0\242\0\33\0\275\0\33\0\33\0\33\0\33"+
+    "\0\33\0\33\0\33\0\33\0\330\0\33\0\33\0\363"+
+    "\0\u010e\0\u0129\0\u0144\0\u015f\0\u017a\0\u0195\0\u01b0\0\u01cb"+
+    "\0\33\0\33";
 
   private static int [] zzUnpackRowMap() {
     int [] result = new int[34];
@@ -157,18 +158,18 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_TRANS = zzUnpacktrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
-    "\2\2\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\1\21\1\22\1\23\1\24\1\25\1\26\1\2\1\27"+
-    "\1\30\33\0\1\3\34\0\1\21\33\0\1\7\1\21"+
-    "\1\0\1\31\26\0\1\21\2\0\1\32\27\0\1\33"+
-    "\33\0\1\34\30\0\1\35\35\0\1\21\24\0\1\21"+
-    "\4\0\1\21\23\0\1\21\35\0\1\36\25\0\1\21"+
-    "\22\0\1\21\27\0\1\37\11\0\1\40\32\0\1\41"+
-    "\33\0\1\42\17\0";
+    "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
+    "\1\11\2\2\1\12\1\13\1\14\1\15\1\16\1\17"+
+    "\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\2"+
+    "\1\27\1\30\34\0\1\3\36\0\1\21\34\0\1\7"+
+    "\1\21\1\0\1\31\27\0\1\21\2\0\1\32\30\0"+
+    "\1\33\34\0\1\34\31\0\1\35\36\0\1\21\25\0"+
+    "\1\21\4\0\1\21\24\0\1\21\36\0\1\36\26\0"+
+    "\1\21\22\0\1\21\30\0\1\37\12\0\1\40\33\0"+
+    "\1\41\34\0\1\42\17\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[468];
+    int [] result = new int[486];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -276,7 +277,6 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private int zzFinalHighSurrogate = 0;
 
   /** Number of newlines encountered up to the start of the matched text. */
-  @SuppressWarnings("unused")
   private int yyline;
 
   /** Number of characters from the last newline up to the start of the matched text. */
@@ -284,7 +284,6 @@ public class IDLexer implements java_cup.runtime.Scanner {
   private int yycolumn;
 
   /** Number of characters up to the start of the matched text. */
-  @SuppressWarnings("unused")
   private long yychar;
 
   /** Whether the scanner is currently at the beginning of a line. */
@@ -311,6 +310,8 @@ private Symbol symbol(int type, Object value) {
    * @param   in  the java.io.Reader to read input from.
    */
   public IDLexer(java.io.Reader in) {
+    yyline = 1;
+  yychar = 1;
     this.zzReader = in;
   }
 
@@ -604,6 +605,61 @@ private Symbol symbol(int type, Object value) {
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
+      yychar+= zzMarkedPosL-zzStartRead;
+
+      boolean zzR = false;
+      int zzCh;
+      int zzCharCount;
+      for (zzCurrentPosL = zzStartRead  ;
+           zzCurrentPosL < zzMarkedPosL ;
+           zzCurrentPosL += zzCharCount ) {
+        zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);
+        zzCharCount = Character.charCount(zzCh);
+        switch (zzCh) {
+        case '\u000B':  // fall through
+        case '\u000C':  // fall through
+        case '\u0085':  // fall through
+        case '\u2028':  // fall through
+        case '\u2029':
+          yyline++;
+          zzR = false;
+          break;
+        case '\r':
+          yyline++;
+          zzR = true;
+          break;
+        case '\n':
+          if (zzR)
+            zzR = false;
+          else {
+            yyline++;
+          }
+          break;
+        default:
+          zzR = false;
+        }
+      }
+
+      if (zzR) {
+        // peek one character ahead if it is
+        // (if we have counted one line too much)
+        boolean zzPeek;
+        if (zzMarkedPosL < zzEndReadL)
+          zzPeek = zzBufferL[zzMarkedPosL] == '\n';
+        else if (zzAtEOF)
+          zzPeek = false;
+        else {
+          boolean eof = zzRefill();
+          zzEndReadL = zzEndRead;
+          zzMarkedPosL = zzMarkedPos;
+          zzBufferL = zzBuffer;
+          if (eof)
+            zzPeek = false;
+          else
+            zzPeek = zzBufferL[zzMarkedPosL] == '\n';
+        }
+        if (zzPeek) yyline--;
+      }
       zzAction = -1;
 
       zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
@@ -673,7 +729,8 @@ private Symbol symbol(int type, Object value) {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { throw new Error("Caracter no valido: " + yytext());
+            { System.out.println("Este es un error lexico: "+yytext()+
+    ", en la linea: "+yyline+", en la columna: "+yychar);
             }
           // fall through
           case 22: break;

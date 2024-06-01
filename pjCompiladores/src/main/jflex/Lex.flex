@@ -6,6 +6,8 @@ import java_cup.runtime.*;
 %%
 %class IDLexer
 %public
+%line
+%char
 %cup
 
 //Filas
@@ -82,6 +84,10 @@ space = [ ]
 whitespace = [\t\r]
 newline = \n
 tab = ">"
+%init{
+  yyline = 1;
+  yychar = 1;
+%init}
 
 %eofval{
   return symbol(ParserSym.EOF);
@@ -174,4 +180,7 @@ return symbol(ParserSym.COMENTARIO, yytext());
 {whitespace}+  {
       } // Ignorar espacios en blanco
 {newline}  {/*Ignorar*/} // Ignorar saltos de linea
-[^] { throw new Error("Caracter no valido: " + yytext()); }
+. {
+    System.out.println("Este es un error lexico: "+yytext()+
+    ", en la linea: "+yyline+", en la columna: "+yychar);
+}

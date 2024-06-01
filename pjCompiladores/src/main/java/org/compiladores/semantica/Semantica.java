@@ -4,6 +4,7 @@ public class Semantica {
     static SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
     static SemanticaPeonNegras semantaicaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
     static SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
+    static SemanticaCaballosNegras semanticaCaballoNegras = SemanticaCaballosNegras.obtenerInstancia();
 
     // Variables globales
     static String tipoPieza = "";
@@ -77,6 +78,8 @@ public class Semantica {
             semantaicaPeonNegras.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
         } else if (tipoPieza.equals("Caballo") && tipoJugador.equals("Blancas")) {
             semanticaCaballoBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
+        } else if (tipoPieza.equals("Caballo") && tipoJugador.equals("Negras")) {
+            semanticaCaballoNegras.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }
