@@ -1,6 +1,8 @@
 package org.compiladores.semantica;
 
+import org.compiladores.datos.conversion.controller.FileUploadController;
 import org.compiladores.tablero.Tablero;
+import org.compiladores.tablero.negras.CaballosNegras;
 import org.compiladores.tablero.negras.PeonesNegras;
 import org.compiladores.tablero.blancas.GestorPeonesBlancas;
 import org.compiladores.tablero.blancas.PeonesBlancas;
@@ -84,12 +86,18 @@ public class SemanticaPeonBlancas {
                 if (coordenadas[0] == x && coordenadas[1] == y) {
                     if (coordenadas[2] == 0 && coordenadas[3] == 0){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará un movimiento simple.");
+                        PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(peon.getX(), peon.getY(), x, y);
                         gestorPeonesBlancas.moverPeon(i, x, y);
                         reseteoDePiezas();
                         reseteoYGeneracionGeneral();
                         return;
                     } else if (coordenadas[2] == 1 && coordenadas[3] == 0){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará un movimienot doble");
+                        PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(peon.getX(), peon.getY(), x, y);
                         gestorPeonesBlancas.moverPeon(i, x, y);
                         reseteoDePiezas();
                         semanticaPeonNegras.Capturas_AlPaso(i, x);
@@ -118,6 +126,8 @@ public class SemanticaPeonBlancas {
                         PeonesNegras peonNegro = tablero.obtenerPeonNegras(indice);
                         peonNegro.setEstado(false);
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " Que parte de la casilla " + peon.getX()+ " , " + peon.getY() + " y se realizará una captura.");
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(peon.getX(), peon.getY(), x, y);
                         gestorPeonesBlancas.moverPeon(i, x, y);
                         reseteoDePiezas();
                         reseteoYGeneracionGeneral();
@@ -236,6 +246,9 @@ public class SemanticaPeonBlancas {
                 if (capturaAlPaso && coordenadas[0] == x && coordenadas[1] == y && coordenadas[2] == 3) {
                     PeonesNegras peonNegras = tablero.obtenerPeonNegras(coordenadas[4]);
                     System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura al paso.");
+                    PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
+                    FileUploadController fileUploadController = new FileUploadController();
+                    fileUploadController.extractMovements(peon.getX(), peon.getY(), x, y);
                     gestorPeonesBlancas.moverPeon(i, x, y);
                     peonNegras.setEstado(false);
                     reseteoDePiezas();

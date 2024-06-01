@@ -83,7 +83,6 @@ comentario = {jb}|{jm}|{jmb}|{jmm}|{ji}|{jd}|{joaj}|{lvb}|{lvn}|{vb}|{vn}|{vdb}|
 space = [ ]
 whitespace = [\t\r]
 newline = \n
-tab = ">"
 %init{
   yyline = 1;
   yychar = 1;
@@ -173,13 +172,10 @@ return symbol(ParserSym.COMENTARIO, yytext());
           return symbol(ParserSym.ESPACIO, yytext());
       }
 
-{tab} {
-           return symbol(ParserSym.TAB, yytext());
-      }
 
 {whitespace}+  {
       } // Ignorar espacios en blanco
-{newline}  {/*Ignorar*/} // Ignorar saltos de linea
+{newline}  {return symbol(ParserSym.TAB, yytext());} // Ignorar saltos de linea
 . {
     System.out.println("Este es un error lexico: "+yytext()+
     ", en la linea: "+yyline+", en la columna: "+yychar);

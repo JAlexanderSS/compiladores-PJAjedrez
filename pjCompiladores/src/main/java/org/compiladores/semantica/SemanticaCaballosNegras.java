@@ -1,5 +1,6 @@
 package org.compiladores.semantica;
 
+import org.compiladores.datos.conversion.controller.FileUploadController;
 import org.compiladores.tablero.Tablero;
 import org.compiladores.tablero.blancas.CaballosBlancas;
 import org.compiladores.tablero.blancas.PeonesBlancas;
@@ -182,6 +183,9 @@ public class SemanticaCaballosNegras {
                 if (datosCaballos[0] == x && datosCaballos[1] == y) {
                     if (datosCaballos[2] == 0) {
                         System.out.println("Movimiento válido");
+                        CaballosNegras caballo = tablero.obtenerCaballoNegras(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(caballo.getX(), caballo.getY(), x, y);
                         gestorCaballosNegras.moverCaballo(i, x, y);
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
@@ -215,13 +219,17 @@ public class SemanticaCaballosNegras {
                 if (datosCaballos[0] == x && datosCaballos[1] == y) {
                     if (datosCaballos[2] == 0) {
                         System.out.println("Movimiento no correspondiente a la notacion");
-                        gestorCaballosNegras.moverCaballo(i, x, y);
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
                         reseteoDePiezas();
                         return;
                     } else if (datosCaballos[2] == 1) {
                         System.out.println("Movimiento valido para la captura");
+                        CaballosNegras caballo = tablero.obtenerCaballoNegras(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(caballo.getX(), caballo.getY(), x, y);
+                        gestorCaballosNegras.moverCaballo(i, x, y);
+
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
                         reseteoDePiezas();

@@ -1,5 +1,6 @@
 package org.compiladores.semantica;
 
+import org.compiladores.datos.conversion.controller.FileUploadController;
 import org.compiladores.tablero.Tablero;
 import org.compiladores.tablero.blancas.CaballosBlancas;
 import org.compiladores.tablero.blancas.GestorCaballoBlancas;
@@ -181,6 +182,9 @@ public class SemanticaCaballoBlancas {
                 if (datosCaballos[0] == x && datosCaballos[1] == y) {
                     if (datosCaballos[2] == 0) {
                         System.out.println("Movimiento válido");
+                        CaballosBlancas caballo = tablero.obtenerCaballoBlancas(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(caballo.getX(), caballo.getY(), x, y);
                         gestorCaballoBlancas.moverCaballo(i, x, y);
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
@@ -214,8 +218,8 @@ public class SemanticaCaballoBlancas {
                 if (datosCaballos[0] == x && datosCaballos[1] == y) {
                     if (datosCaballos[2] == 0) {
                         System.out.println("Movimiento válido");
-                        gestorCaballoBlancas.moverCaballo(i, x, y);
                         movimientoValido = true;
+
                         reseteoYGeneracionGeneral();
                         reseteDePiezas();
                         return;
@@ -228,6 +232,10 @@ public class SemanticaCaballoBlancas {
                     } else if (datosCaballos[2] == 2) {
                         System.out.println("Movimiento valido para una captura de caballo.");
                         movimientoValido = true;
+                        CaballosBlancas caballo = tablero.obtenerCaballoBlancas(i);
+                        FileUploadController fileUploadController = new FileUploadController();
+                        fileUploadController.extractMovements(caballo.getX(), caballo.getY(), x, y);
+                        gestorCaballoBlancas.moverCaballo(i, x, y);
                         reseteoYGeneracionGeneral();
                         reseteDePiezas();
                         return;
