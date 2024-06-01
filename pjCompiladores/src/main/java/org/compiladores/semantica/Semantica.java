@@ -1,13 +1,19 @@
 package org.compiladores.semantica;
 
 public class Semantica {
-    static SemanticaPeonBlancas semanticaPeonBlancas = new SemanticaPeonBlancas();
+    static SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
+    static SemanticaPeonNegras semantaicaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
+    static SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
+
     // Variables globales
     static String tipoPieza = "";
     static int tipoMovimiento = 0;
     static int cordenadax = 0;
     static int cordenaday = 0;
+    static int origenX = 0;
     static String tipoJugador = "";
+    static int movimientos = 0;
+
     // Definición valor de las columnas en números
     static String[] ey = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
@@ -35,6 +41,12 @@ public class Semantica {
         cordenaday = Integer.parseInt(fila);
     }
 
+    public static void contadorJugadas(){
+        movimientos += 1;
+        System.out.println("Movimientos: " + movimientos);
+        System.out.println("--------------------------------------------------------------");
+    }
+
     // Función para obtener la posición en Y de la pieza
     public static void posiccionX(String letraColumna) {
         for (int i = 0; i < ey.length; i++) {
@@ -45,13 +57,26 @@ public class Semantica {
         }
     }
 
+    public static void calculoPrecedenciaX(String precedenciaX){
+        for (int i = 0; i < ey.length; i++) {
+            if (ey[i].equals(precedenciaX)) {
+                origenX = i + 1;
+                break; // Una vez encontrado el elemento, se puede salir del bucle
+            }
+        }
+    }
+
     // Función temporal para visualizar los valores obtenidos
     public static void valoresObtenidos() {
         System.out.println("Tipo de pieza: " + tipoPieza);
         System.out.println("Cordenada X: " + cordenadax);
         System.out.println("Cordenada Y: " + cordenaday);
-        if (tipoPieza.equals("Peon")) {
-            semanticaPeonBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
+        if (tipoPieza.equals("Peon") && tipoJugador.equals("Blancas")) {
+            semanticaPeonBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
+        } else if(tipoPieza.equals("Peon") && tipoJugador.equals("Negras")) {
+            semantaicaPeonNegras.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
+        } else if (tipoPieza.equals("Caballo") && tipoJugador.equals("Blancas")) {
+            semanticaCaballoBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }

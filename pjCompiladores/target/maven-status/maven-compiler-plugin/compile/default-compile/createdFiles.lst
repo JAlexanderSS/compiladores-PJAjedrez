@@ -1,0 +1,13 @@
+org\compiladores\Parser$CUP$Parser$actions.class
+org\compiladores\ParserSym.class
+org\compiladores\semantica\Semantica.class
+org\compiladores\App.class
+org\compiladores\tablero\negras\PeonesNegras.class
+org\compiladores\tablero\blancas\PeonesBlancas.class
+org\compiladores\semantica\SemanticaPeonBlancas.class
+org\compiladores\semantica\SemanticaPeonNegras.class
+org\compiladores\tablero\blancas\GestorPeonesBlancas.class
+org\compiladores\Parser.class
+org\compiladores\IDLexer.class
+org\compiladores\tablero\Tablero.class
+org\compiladores\tablero\negras\GestorPeonesNegras.class
