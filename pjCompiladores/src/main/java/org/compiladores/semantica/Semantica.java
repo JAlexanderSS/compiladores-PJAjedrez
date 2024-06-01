@@ -3,6 +3,7 @@ package org.compiladores.semantica;
 public class Semantica {
     static SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
     static SemanticaPeonNegras semantaicaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
+    static SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
 
     // Variables globales
     static String tipoPieza = "";
@@ -74,6 +75,8 @@ public class Semantica {
             semanticaPeonBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
         } else if(tipoPieza.equals("Peon") && tipoJugador.equals("Negras")) {
             semantaicaPeonNegras.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
+        } else if (tipoPieza.equals("Caballo") && tipoJugador.equals("Blancas")) {
+            semanticaCaballoBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }

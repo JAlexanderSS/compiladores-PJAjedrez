@@ -133,6 +133,8 @@ public class SemanticaPeonNegras {
     }
 
     public void reseteoYGeneracionGeneral(){
+        SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
+        semanticaCaballoBlancas.reseteoYGeneracionGeneral();
         capturaAlPaso = false;
         for (int i = 0; i < 8; i++){
             reseteoYGeneracion(i);

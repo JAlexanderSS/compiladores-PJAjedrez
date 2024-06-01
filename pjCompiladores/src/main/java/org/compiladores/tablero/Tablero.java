@@ -27,8 +27,9 @@ public class Tablero {
             peonesNegras[i].setX(i + 1);
         }
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i <= 1; i++) {
             caballosBlancas[i] = new CaballosBlancas();
+            System.out.println(i);
         }
         caballosBlancas[0].setX(2);
         caballosBlancas[1].setX(7);
