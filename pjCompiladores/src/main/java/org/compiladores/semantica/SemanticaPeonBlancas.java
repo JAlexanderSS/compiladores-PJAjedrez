@@ -30,7 +30,7 @@ public class SemanticaPeonBlancas {
         }
     }
 
-    // Constructor privado para el patrón Singleton
+        // Constructor privado para el patrón Singleton
     private SemanticaPeonBlancas() {
         inicializarMovimientosSimples();
     }
@@ -85,11 +85,13 @@ public class SemanticaPeonBlancas {
                     if (coordenadas[2] == 0 && coordenadas[3] == 0){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará un movimiento simple.");
                         gestorPeonesBlancas.moverPeon(i, x, y);
+                        semanticaPeonNegras.reseteoYGeneracionGeneral();
                         reseteoYGeneracionGeneral();
                         return;
                     } else if (coordenadas[2] == 1 && coordenadas[3] == 0){
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará un movimienot doble");
                         gestorPeonesBlancas.moverPeon(i, x, y);
+                        semanticaPeonNegras.reseteoYGeneracionGeneral();
                         semanticaPeonNegras.Capturas_AlPaso(i, x);
                         reseteoYGeneracionGeneral();
                         return;
@@ -107,6 +109,7 @@ public class SemanticaPeonBlancas {
     }
 
     public void movimientoDeCaptura(int x, int y, int origenX) {
+        SemanticaPeonNegras semantica = SemanticaPeonNegras.obtenerInstancia();
         for (int i = 0; i < peonesList.length; i++) {
             for (int[] coordenadas : peonesList[i]) {
                 PeonesBlancas peon = tablero.obtenerPeonBlancas(i);
@@ -117,6 +120,7 @@ public class SemanticaPeonBlancas {
                         peonNegro.setEstado(false);
                         System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " Que parte de la casilla " + peon.getX()+ " , " + peon.getY() + " y se realizará una captura.");
                         gestorPeonesBlancas.moverPeon(i, x, y);
+                        semantica.reseteoYGeneracionGeneral();
                         reseteoYGeneracionGeneral();
                     } else {
                         System.out.println("Las coordenadas (" + x + ", " + y + ") no coinciden con ningún peón.");
@@ -129,7 +133,7 @@ public class SemanticaPeonBlancas {
     }
 
     public void reseteoYGeneracionGeneral(){
-
+        capturaAlPaso = false;
         for (int i = 0; i < 8; i++){
             reseteoYGeneracion(i);
         }
@@ -190,9 +194,9 @@ public class SemanticaPeonBlancas {
     }
 
     private void asignacionDeErrores(int indice, PeonesBlancas peon, int newX, int newY, int tipoMov) {
-        if(verificarCoincidenciaNegras(newX, newY)){
+        if(verificarCoincidenciaBlancas(newX, newY)){
             peonesList[indice].add(new int[]{newX, newY, tipoMov, 1});
-        }else if(verificarCoincidenciaBlancas(newX, newY)){
+        }else if(verificarCoincidenciaNegras(newX, newY)){
             peonesList[indice].add(new int[]{newX, newY, tipoMov, 2});
         } else {
             peonesList[indice].add(new int[]{newX, newY, tipoMov, 0});
@@ -218,6 +222,7 @@ public class SemanticaPeonBlancas {
     }
 
     public Boolean verificacionDeCapturaAlPaso(int x, int y) {
+        SemanticaPeonNegras semantica = SemanticaPeonNegras.obtenerInstancia();
         boolean realizado = false;
         for (int i = 0; i < peonesList.length; i++) {
             for (int[] coordenadas : peonesList[i]) {
@@ -226,6 +231,7 @@ public class SemanticaPeonBlancas {
                     System.out.println("Las coordenadas (" + x + ", " + y + ") coinciden con el peón en el índice " + i + " y se realizará una captura al paso.");
                     gestorPeonesBlancas.moverPeon(i, x, y);
                     peonNegras.setEstado(false);
+                    semantica.reseteoYGeneracionGeneral();
                     reseteoYGeneracionGeneral();
                     realizado = true;
                     return realizado;

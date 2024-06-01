@@ -7,7 +7,7 @@ import java.io.StringReader;
 public class ParaserTest {
     @Test
     public void parserAnalysis() throws Exception {
-        String expresion = "h4 a5>h5 a4>b4 axb3>f3 g5>d3 d6>hxg6 bxc2";
+        String expresion = "Ch3 g5";
         IDLexer lexer = new IDLexer(new StringReader(expresion));
         Parser p = new Parser(lexer);
         String resultado = (String) p.parse().value;
@@ -22,3 +22,5 @@ public class ParaserTest {
 //"d4 h6>d5 e5>dxe6 h5" -Captura al paso de las blancas
 //"h4 a5>h5 a4>b4 axb3>f3 g5>hxg6 bxc2" -Capturas al paso de blancas y negras
 //"h4 a5>h5 a4>b4 axb3>f3 g5>d3 d6>hxg6 bxc2" -Capturas al paso de blancas y negras con error en una captura al paso
+//"c4 c5>c5 f6" -Probar movimientos erroneos y concidencia negras
+
