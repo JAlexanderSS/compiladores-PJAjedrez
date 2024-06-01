@@ -4,29 +4,45 @@ import java_cup.runtime.*;
 
 class Parser;
 
-terminal FILA, COLUMNA, REY, DAMA, ALFIL, CABALLO, TORRE, PEON, CAPTURA, PROMOCION, CAP, ENROQUELARGO, ENROQUECORTO, JAQUEMATE, JAQUE, COMENTARIO;
+terminal FILA, COLUMNA, REY, DAMA, ALFIL, CABALLO, TORRE, PEON, CAPTURA, PROMOCION, CAP, ENROQUELARGO, ENROQUECORTO, JAQUEMATE, JAQUE, COMENTARIO, ESPACIO, TAB;
 
 non terminal captura, cdp, cdpap, pdp, dpc, dpf, dpa, cca, movimiento, jque, jquemate, movimientofinal, comentario, entrada;
 non terminal desplazamiento;
 non terminal pieza;
 non terminal casilla;
 non terminal desplazamientopeon;
+non terminal movimientoB;
+non terminal movimientoN;
+non terminal jugada;
 
 start with entrada;
 
 entrada ::=
-    movimientofinal {: RESULT = Semantica.prueba(); Semantica.valoresObtenidos();  :}
+    jugada TAB entrada
+    | jugada
+    | jquemate comentario {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
+    | movimientoB TAB comentario {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
+    ;
+
+jugada ::=
+    movimientoB ESPACIO movimientoN {: RESULT = Semantica.prueba(); Semantica.contadorJugadas();:}
+ ;
+movimientoB ::=
+    movimientofinal {: Semantica.tipoJugadorGet("Blancas");Semantica.valoresObtenidos();:}
+    ;
+
+movimientoN ::=
+    movimientofinal {: Semantica.tipoJugadorGet("Negras");Semantica.valoresObtenidos();:}
     ;
 
 movimientofinal ::=
     movimiento comentario
     | jque comentario
-    | jquemate comentario
     ;
 
 movimiento ::=
     desplazamiento
-    | captura {: Semantica.captura(true);:}
+    | captura
     | cdp
     | cdpap
     | pdp
@@ -59,20 +75,20 @@ casilla ::=
     ;
 
 desplazamiento ::=
-    pieza casilla
-    | desplazamientopeon {: Semantica.tipoPieza("Peon"); Semantica.tipoMovimiento(0);:}
+    pieza casilla {: Semantica.tipoMovimiento(0);:}
+    | desplazamientopeon {: Semantica.tipoMovimiento(0);:}
     ;
 
 desplazamientopeon ::=
-    casilla
+    casilla  {: Semantica.tipoPieza("Peon");:}
     ;
 
 captura ::=
-    pieza CAPTURA casilla
+    pieza CAPTURA casilla {: Semantica.tipoMovimiento(2);:}
     ;
 
 cdp ::=
-    COLUMNA CAPTURA casilla
+    COLUMNA:precedenciaX CAPTURA desplazamientopeon {: Semantica.tipoMovimiento(2); Semantica.calculoPrecedenciaX((String) precedenciaX);:}
     ;
 
 cdpap ::=
@@ -80,7 +96,9 @@ cdpap ::=
     ;
 
 pdp ::=
-    desplazamiento PROMOCION pieza
+    desplazamiento PROMOCION pieza {: Semantica.tipoMovimiento(4);:}
+    |
+    COLUMNA CAPTURA casilla PROMOCION pieza {: Semantica.tipoMovimiento(4);:}
     ;
 
 cca ::=

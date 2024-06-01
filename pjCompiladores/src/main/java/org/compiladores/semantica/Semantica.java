@@ -1,15 +1,18 @@
 package org.compiladores.semantica;
 
-import org.compiladores.tablero.Tablero;
-
 public class Semantica {
-    static SemanticaPeon semanticaPeon = new SemanticaPeon();
+    static SemanticaPeonBlancas semanticaPeonBlancas = SemanticaPeonBlancas.obtenerInstancia();
+    static SemanticaPeonNegras semantaicaPeonNegras = SemanticaPeonNegras.obtenerInstancia();
+    static SemanticaCaballoBlancas semanticaCaballoBlancas = SemanticaCaballoBlancas.obtenerInstancia();
+
     // Variables globales
     static String tipoPieza = "";
-    static Boolean captura = false;
     static int tipoMovimiento = 0;
     static int cordenadax = 0;
     static int cordenaday = 0;
+    static int origenX = 0;
+    static String tipoJugador = "";
+    static int movimientos = 0;
 
     // Definición valor de las columnas en números
     static String[] ey = {"a", "b", "c", "d", "e", "f", "g", "h"};
@@ -27,15 +30,21 @@ public class Semantica {
         tipoMovimiento = movimiento;
     }
 
-    // Recibimos si se captura una pieza
-    public static void captura(Boolean cap) {
-        captura = cap;
+    public static void  tipoJugadorGet(String jugador){
+        tipoJugador = jugador;
+        System.out.println("Tipo Jugador: " + tipoJugador);
     }
 
     // Recibimos las coordenadas de la pieza
     public static void casilla(String columna, String fila) {
         posiccionX(columna);
         cordenaday = Integer.parseInt(fila);
+    }
+
+    public static void contadorJugadas(){
+        movimientos += 1;
+        System.out.println("Movimientos: " + movimientos);
+        System.out.println("--------------------------------------------------------------");
     }
 
     // Función para obtener la posición en Y de la pieza
@@ -48,14 +57,26 @@ public class Semantica {
         }
     }
 
+    public static void calculoPrecedenciaX(String precedenciaX){
+        for (int i = 0; i < ey.length; i++) {
+            if (ey[i].equals(precedenciaX)) {
+                origenX = i + 1;
+                break; // Una vez encontrado el elemento, se puede salir del bucle
+            }
+        }
+    }
+
     // Función temporal para visualizar los valores obtenidos
     public static void valoresObtenidos() {
         System.out.println("Tipo de pieza: " + tipoPieza);
         System.out.println("Cordenada X: " + cordenadax);
         System.out.println("Cordenada Y: " + cordenaday);
-
-        if (tipoPieza.equals("Peon") && !captura) {
-            semanticaPeon.validacionDeMovimiento(cordenadax, cordenaday);
+        if (tipoPieza.equals("Peon") && tipoJugador.equals("Blancas")) {
+            semanticaPeonBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
+        } else if(tipoPieza.equals("Peon") && tipoJugador.equals("Negras")) {
+            semantaicaPeonNegras.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento, origenX);
+        } else if (tipoPieza.equals("Caballo") && tipoJugador.equals("Blancas")) {
+            semanticaCaballoBlancas.validacionDeMovimiento(cordenadax, cordenaday, tipoMovimiento);
         }
     }
 }

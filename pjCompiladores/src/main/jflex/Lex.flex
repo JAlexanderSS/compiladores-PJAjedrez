@@ -78,8 +78,10 @@ nt = {novedad} //N: novedad teórica
 //Comentarios en el juego
 comentario = {jb}|{jm}|{jmb}|{jmm}|{ji}|{jd}|{joaj}|{lvb}|{lvn}|{vb}|{vn}|{vdb}|{vdn}|{pi}|{jcpdm}|{nt}
 //Saltos de linea y espacios
-whitespace = [\t\r ]
+space = [ ]
+whitespace = [\t\r]
 newline = \n
+tab = ">"
 
 %eofval{
   return symbol(ParserSym.EOF);
@@ -161,6 +163,15 @@ return symbol(ParserSym.JAQUE, yytext());
 return symbol(ParserSym.COMENTARIO, yytext());
 }
 
-{whitespace}+  {/*Ignorar*/} // Ignorar espacios en blanco
+{space} {
+          return symbol(ParserSym.ESPACIO, yytext());
+      }
+
+{tab} {
+           return symbol(ParserSym.TAB, yytext());
+      }
+
+{whitespace}+  {
+      } // Ignorar espacios en blanco
 {newline}  {/*Ignorar*/} // Ignorar saltos de linea
 [^] { throw new Error("Caracter no valido: " + yytext()); }
