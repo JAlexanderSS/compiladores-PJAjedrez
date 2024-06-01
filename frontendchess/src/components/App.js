@@ -47,7 +47,7 @@ function App() {
               game.move({ from, to });
             });
             resolve();
-          }, 1000)); // 1000ms delay between moves
+          }, 1000)); // 1000ms delay between movess
         }
       } else {
         console.error("Expected an array of moves, but received:", data);
