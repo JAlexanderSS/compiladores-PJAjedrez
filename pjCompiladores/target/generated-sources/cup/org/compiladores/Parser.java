@@ -6,6 +6,7 @@
 package org.compiladores;
 
 import org.compiladores.semantica.Semantica;
+import org.compiladores.MyParser;
 import java_cup.runtime.*;
 import java_cup.runtime.XMLElement;
 

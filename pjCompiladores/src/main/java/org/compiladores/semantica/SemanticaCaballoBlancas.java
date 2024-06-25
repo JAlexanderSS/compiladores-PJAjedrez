@@ -191,7 +191,7 @@ public class SemanticaCaballoBlancas {
                         reseteDePiezas();
                         return;
                     } else if (datosCaballos[2] == 1) {
-                        System.out.println("Existe una pieza enemiga en la casilla seleccionada");
+                        System.out.println("Existe una pieza aliada en la casilla seleccionada");
                         movimientoValido = true;
                         reseteoYGeneracionGeneral();
                         reseteDePiezas();
